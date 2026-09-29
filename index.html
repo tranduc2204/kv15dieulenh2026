@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Ôn Luyện 100 Câu Trắc Nghiệm ĐL, QS, VT CAND 2026</title>
+<style>
+:root {
+  --primary: #c62828;
+  --primary-dark: #8e0000;
+  --primary-light: #e53935;
+  --secondary: #0d47a1;
+  --accent: #ffb300;
+  --success: #2e7d32;
+  --success-bg: #e8f5e9;
+  --danger: #d32f2f;
+  --danger-bg: #ffebee;
+  --card-bg: #ffffff;
+  --body-bg: #f4f6fa;
+  --text-main: #212121;
+  --text-sub: #616161;
+  --border-color: #e0e0e0;
+  --radius: 12px;
+  --shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+* { margin:0; padding:0; box-sizing:border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; -webkit-tap-highlight-color: transparent; }
+body { background: var(--body-bg); color: var(--text-main); line-height: 1.5; padding-bottom: 30px; }
+.container { max-width: 820px; margin: 0 auto; padding: 12px; }
+
+/* Header Banner */
+.header-box {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  color: white;
+  padding: 22px 18px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(198,40,40,0.25);
+  margin-bottom: 14px;
+}
+.header-box h1 { font-size: 1.35rem; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px; }
+.header-box p { font-size: 0.88rem; opacity: 0.92; }
+.badge-tag { display: inline-block; background: var(--accent); color: #000; font-weight: 800; font-size: 0.72rem; padding: 3px 12px; border-radius: 20px; margin-top: 6px; text-transform: uppercase; }
+
+/* Navigation */
+.navbar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 14px; }
+.nav-item {
+  background: var(--card-bg);
+  border: 2px solid transparent;
+  padding: 10px 4px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text-sub);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  transition: all 0.2s;
+}
+.nav-item.active {
+  background: #fff;
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 3px 8px rgba(198,40,40,0.2);
+}
+.nav-item span { display: block; font-size: 1.25rem; margin-bottom: 2px; }
+
+/* Card Components */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: var(--shadow);
+}
+.card-header {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+/* 3-Day Plan */
+.plan-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+.plan-card {
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.15s ease;
+}
+.plan-card:hover { transform: translateY(-2px); }
+.p-day1 { background: #e8f5e9; border-color: #a5d6a7; }
+.p-day2 { background: #fff8e1; border-color: #ffe082; }
+.p-day3 { background: #e3f2fd; border-color: #90caf9; }
+.plan-card h4 { font-size: 0.88rem; font-weight: 800; color: #1b5e20; margin-bottom: 3px; }
+.p-day2 h4 { color: #f57f17; }
+.p-day3 h4 { color: #0d47a1; }
+.plan-card p { font-size: 0.73rem; color: #555; line-height: 1.35; }
+
+/* Mode Grid */
+.mode-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 14px; }
+.mode-box {
+  background: #fff;
+  border: 1.5px solid var(--border-color);
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.2s;
+}
+.mode-box:hover { border-color: var(--primary); background: #fffbfb; }
+.mode-icon { font-size: 1.6rem; flex-shrink: 0; }
+.mode-txt h4 { font-size: 0.9rem; font-weight: 700; color: var(--text-main); }
+.mode-txt p { font-size: 0.74rem; color: var(--text-sub); }
+
+/* Progress Bar */
+.prog-wrapper { background: #e0e0e0; border-radius: 20px; height: 10px; overflow: hidden; margin: 10px 0; }
+.prog-fill { height: 100%; background: linear-gradient(90deg, #43a047, #2e7d32); width: 0%; transition: width 0.4s ease; }
+
+/* Question Area */
+.q-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.q-badge { background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-weight: 800; font-size: 0.8rem; }
+.star-icon-btn { background: none; border: none; font-size: 1.45rem; cursor: pointer; color: #bdbdbd; transition: color 0.2s; }
+.star-icon-btn.active { color: #fbc02d; }
+.q-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.55;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+  padding: 14px;
+  background: #fafafa;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+/* Choices */
+.choices-box { display: flex; flex-direction: column; gap: 10px; }
+.choice-btn {
+  background: white;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  transition: all 0.15s ease;
+}
+.choice-btn:hover:not(.locked) { border-color: var(--primary-light); background: #fffafa; }
+.choice-tag {
+  background: #eeeeee;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.82rem;
+  flex-shrink: 0;
+  color: #333;
+}
+.choice-btn.correct { background: var(--success-bg) !important; border-color: var(--success) !important; color: #1b5e20; }
+.choice-btn.correct .choice-tag { background: var(--success); color: white; }
+.choice-btn.wrong { background: var(--danger-bg) !important; border-color: var(--danger) !important; color: #b71c1c; }
+.choice-btn.wrong .choice-tag { background: var(--danger); color: white; }
+.choice-btn.locked { cursor: default; }
+
+/* Detailed Old Answer Box */
+.ans-detail-box {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  display: none;
+}
+.ans-detail-box.show-correct {
+  display: block;
+  background: var(--success-bg);
+  border-left: 4px solid var(--success);
+  color: #1b5e20;
+}
+.ans-detail-box.show-wrong {
+  display: block;
+  background: var(--danger-bg);
+  border-left: 4px solid var(--danger);
+  color: #b71c1c;
+}
+
+/* Control Buttons */
+.footer-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 16px; }
+.btn {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+.btn-primary { background: var(--primary); color: white; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-outline { background: transparent; border: 1.5px solid var(--text-sub); color: var(--text-main); }
+.btn-outline:hover { background: #eee; }
+.btn-sm { padding: 6px 12px; font-size: 0.8rem; }
+.btn-success { background: var(--success); color: white; }
+
+/* Stats Row */
+.stat-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; margin: 12px 0; }
+.stat-item { background: #fafafa; border: 1px solid var(--border-color); border-radius: 8px; padding: 10px 4px; }
+.stat-val { font-size: 1.35rem; font-weight: 800; color: var(--secondary); }
+.stat-txt { font-size: 0.72rem; color: var(--text-sub); }
+
+/* Bank List */
+.filter-scroll { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px; margin-bottom: 12px; }
+.filter-btn { background: #eee; border: none; padding: 6px 12px; border-radius: 20px; font-size: 0.76rem; font-weight: 700; white-space: nowrap; cursor: pointer; }
+.filter-btn.active { background: var(--secondary); color: white; }
+.bank-item { border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; margin-bottom: 10px; background: white; cursor: pointer; transition: all 0.15s; }
+.bank-item:hover { border-color: var(--primary); }
+.bank-item-title { font-size: 0.88rem; font-weight: 700; margin-bottom: 6px; display: flex; justify-content: space-between; }
+.bank-item-old-ans { background: #f1f8e9; padding: 8px 10px; border-radius: 6px; font-size: 0.82rem; color: #2e7d32; line-height: 1.45; border-left: 3px solid #4caf50; }
+
+.hidden { display: none !important; }
+@media (max-width: 600px) {
+  .plan-container { grid-template-columns: 1fr; }
+  .mode-grid { grid-template-columns: 1fr; }
+  .stat-summary { grid-template-columns: repeat(2, 1fr); }
+  .header-box h1 { font-size: 1.15rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <div class="header-box">
+    <h1>BỘ ĐỀ 100 CÂU HỎI TRẮC NGHIỆM</h1>
+    <p>TẬP HUẤN ĐIỀU LỆNH, QUÂN SỰ, VÕ THUẬT CAND 2026</p>
+    <span class="badge-tag">LỰA CHỌN MỚI A-B-C • ĐỐI CHIẾU ĐÁP ÁN GỐC CHUẨN</span>
+  </div>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="nav-item active" onclick="switchTab('tab-home')"><span>🏠</span>Trang chủ</div>
+    <div class="nav-item" onclick="switchTab('tab-quiz')"><span>✍️</span>Luyện tập</div>
+    <div class="nav-item" onclick="switchTab('tab-bank')"><span>📖</span>Ngân hàng</div>
+    <div class="nav-item" onclick="switchTab('tab-share')"><span>📤</span>Chia sẻ</div>
+  </div>
+
+  <!-- TAB 1: HOME -->
+  <div id="tab-home">
+    <div class="card">
+      <div class="card-header">📅 Lộ trình ghi nhớ trong 3 ngày</div>
+      <div class="plan-container">
+        <div class="plan-card p-day1" onclick="startLearning(1, 50)">
+          <h4>NGÀY 1</h4>
+          <p><strong>Câu 1 - 50</strong><br>Điều lệnh nội vụ, chức trách chỉ huy, tác phong CAND</p>
+        </div>
+        <div class="plan-card p-day2" onclick="startLearning(51, 100)">
+          <h4>NGÀY 2</h4>
+          <p><strong>Câu 51 - 100</strong><br>Nghi lễ chào cờ, điều lệnh đội ngũ, xử lý vi phạm</p>
+        </div>
+        <div class="plan-card p-day3" onclick="startExam(100)">
+          <h4>NGÀY 3</h4>
+          <p><strong>Thi thử 100 câu</strong><br>Tổng ôn toàn diện, bấm giờ thi thật</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">🎯 Chọn chế độ luyện tập</div>
+      <div class="mode-grid">
+        <div class="mode-box" onclick="startWrongQuiz()">
+          <span class="mode-icon">❌</span>
+          <div class="mode-txt">
+            <h4>Ôn các câu làm sai</h4>
+            <p id="txt-wrong-count">0 câu cần khắc phục</p>
+          </div>
+        </div>
+        <div class="mode-box" onclick="startStarQuiz()">
+          <span class="mode-icon">⭐</span>
+          <div class="mode-txt">
+            <h4>Câu hỏi quan trọng</h4>
+            <p id="txt-star-count">0 câu đã đánh dấu sao</p>
+          </div>
+        </div>
+        <div class="mode-box" onclick="startExam(10)">
+          <span class="mode-icon">⚡</span>
+          <div class="mode-txt">
+            <h4>Thi ngẫu nhiên 10 câu</h4>
+            <p>Trộn ngẫu nhiên 10 câu hỏi</p>
+          </div>
+        </div>
+        <div class="mode-box" onclick="startExam(100)">
+          <span class="mode-icon">🏆</span>
+          <div class="mode-txt">
+            <h4>Thi thử đủ 100 câu</h4>
+            <p>90 phút • Có xếp loại</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">📊 Tiến độ học tập cá nhân</div>
+      <div class="prog-wrapper"><div class="prog-fill" id="home-prog-bar"></div></div>
+      <div style="display:flex;justify-content:space-between;font-size:0.8rem;color:var(--text-sub)">
+        <span id="txt-home-prog">Đã ôn luyện: 0/100 câu</span>
+        <span id="txt-home-acc">Tỉ lệ đúng: 0%</span>
+      </div>
+      <div class="stat-summary">
+        <div class="stat-item"><div class="stat-val" id="val-total">0</div><div class="stat-txt">Lượt làm</div></div>
+        <div class="stat-item"><div class="stat-val" style="color:var(--success)" id="val-correct">0</div><div class="stat-txt">Đúng</div></div>
+        <div class="stat-item"><div class="stat-val" style="color:var(--danger)" id="val-wrong">0</div><div class="stat-txt">Sai</div></div>
+        <div class="stat-item"><div class="stat-val" style="color:#f57f17" id="val-mastered">0</div><div class="stat-txt">Đã thuộc vững</div></div>
+      </div>
+      <div style="text-align:right">
+        <button class="btn btn-outline btn-sm" onclick="resetAllProgress()">🔄 Xoá kết quả làm lại</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: QUIZ -->
+  <div id="tab-quiz" class="hidden">
+    <div class="card" id="quiz-box">
+      <div class="q-top">
+        <span class="q-badge" id="q-counter">Câu 1/100</span>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span id="q-timer-clock" style="font-weight:700;color:var(--primary);font-size:0.9rem">⏱️ 00:00</span>
+          <button class="star-icon-btn" id="q-star-toggle" onclick="toggleStarCurrent()" title="Đánh dấu câu khó">★</button>
+        </div>
+      </div>
+
+      <div class="prog-wrapper"><div class="prog-fill" id="quiz-prog-bar"></div></div>
+
+      <div class="q-title" id="q-title-text">Đang tải câu hỏi...</div>
+
+      <!-- 3 Choices A, B, C -->
+      <div class="choices-box" id="q-choices-container"></div>
+
+      <!-- Old official answer explanation -->
+      <div class="ans-detail-box" id="q-explanation-box"></div>
+
+      <div class="footer-nav">
+        <button class="btn btn-outline" onclick="goPrevQuestion()" id="btn-q-prev">← Câu trước</button>
+        <div style="font-size:0.85rem;color:var(--text-sub)" id="q-mini-stats">Đúng: 0 | Sai: 0</div>
+        <button class="btn btn-primary" onclick="goNextQuestion()" id="btn-q-next">Câu sau →</button>
+      </div>
+    </div>
+
+    <!-- Quiz Result Screen -->
+    <div class="card hidden" id="quiz-result-box" style="text-align:center;padding:30px 16px;">
+      <div style="font-size:3.5rem" id="res-icon">🎉</div>
+      <h2 style="font-size:1.4rem;color:var(--secondary);margin-top:8px" id="res-title">Kết quả làm bài</h2>
+      <div style="font-size:2.6rem;font-weight:800;color:var(--primary);margin:12px 0" id="res-score">0 / 0</div>
+      <p style="color:var(--text-sub);font-size:0.95rem" id="res-desc">Đánh giá kết quả</p>
+      
+      <div class="stat-summary" style="margin:20px 0">
+        <div class="stat-item"><div class="stat-val" id="res-pct">0%</div><div class="stat-txt">Tỉ lệ chính xác</div></div>
+        <div class="stat-item"><div class="stat-val" id="res-duration">00:00</div><div class="stat-txt">Thời gian hoàn thành</div></div>
+      </div>
+
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="switchTab('tab-home')">🏠 Về trang chủ</button>
+        <button class="btn btn-outline" onclick="startWrongQuiz()">❌ Ôn lại câu sai</button>
+        <button class="btn btn-success" onclick="restartQuiz()">🔄 Làm lại đề này</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: QUESTION BANK -->
+  <div id="tab-bank" class="hidden">
+    <div class="card">
+      <div class="card-header">📖 Ngân hàng 100 câu &amp; Đáp án gốc chuẩn</div>
+      <input type="text" id="bank-search" placeholder="🔍 Tìm kiếm nhanh (ví dụ: chào cờ, dây chéo, 70 cen-ti-mét...)" 
+             style="width:100%;padding:10px 14px;border:1.5px solid var(--border-color);border-radius:8px;margin-bottom:12px;outline:none"
+             oninput="renderBankList()">
+      
+      <div class="filter-scroll">
+        <button class="filter-btn active" onclick="setBankFilter('all', this)">Tất cả (100)</button>
+        <button class="filter-btn" onclick="setBankFilter('d1', this)">Ngày 1 (1-50)</button>
+        <button class="filter-btn" onclick="setBankFilter('d2', this)">Ngày 2 (51-100)</button>
+        <button class="filter-btn" onclick="setBankFilter('star', this)">Đã gắn ⭐</button>
+        <button class="filter-btn" onclick="setBankFilter('wrong', this)">Làm sai ❌</button>
+      </div>
+
+      <div id="bank-items-container" style="max-height:550px;overflow-y:auto;padding-right:4px;"></div>
+    </div>
+  </div>
+
+  <!-- TAB 4: SHARE -->
+  <div id="tab-share" class="hidden">
+    <div class="card">
+      <div class="card-header">📤 Cách chia sẻ ứng dụng cho đồng đội</div>
+      <p style="font-size:0.9rem;color:#444">Ứng dụng được thiết kế dạng <strong>1 file HTML duy nhất</strong>, dung lượng nhẹ, chạy được ngay trên mọi dòng điện thoại (iPhone, Samsung, Xiaomi...) và máy tính mà không cần cài đặt ứng dụng phụ.</p>
+
+      <div style="background:#e8eaf6;border-left:4px solid var(--secondary);padding:14px;border-radius:8px;margin:14px 0;font-size:0.88rem;line-height:1.6">
+        <strong>📌 Hướng dẫn chia sẻ nhanh:</strong>
+        <ol style="margin-left:18px;margin-top:6px;">
+          <li><strong>Gửi qua Zalo:</strong> Kéo gửi trực tiếp file <code>quiz_dieulenh.html</code> vào nhóm Zalo. Đồng đội chỉ việc chạm mở file là làm bài được ngay (Offline 100%).</li>
+          <li><strong>Đưa lên link Web (để gửi link):</strong> Kéo thả file này vào <strong>app.netlify.com/drop</strong> hoặc <strong>tiiny.host</strong> để tạo link web gửi vào nhóm.</li>
+        </ol>
+      </div>
+
+      <div style="text-align:center;margin-top:16px">
+        <button class="btn btn-primary" onclick="copyShareText()">📋 Sao chép tin nhắn kèm lời nhắn gửi đồng đội</button>
+        <div id="share-copy-noti" style="margin-top:8px;font-size:0.8rem;color:var(--success);font-weight:700"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// DỮ LIỆU ĐẦY ĐỦ 100 CÂU HỎI:
+// - opts: 3 lựa chọn A, B, C bạn vừa gửi
+// - ans: chỉ số đáp án đúng (0 = A, 1 = B, 2 = C)
+// - oldAns: toàn văn ĐÁP ÁN GỐC CHUẨN của bạn
+const dataset = [
+{id:1,q:"Phạm vi điều chỉnh của Thông tư số 34 ngày 18/9/2019 của Bộ quy định về Điều lệnh nội vụ CAND quy định những vấn đề gì?",
+opts:[
+"Quy định chức trách, nhiệm vụ chung của Công an nhân dân Việt Nam, Công an nhân dân là lực lượng vũ trang trọng yếu, tin cậy của Đảng Cộng sản Việt Nam và Nhà nước Cộng hòa xã hội chủ nghĩa Việt Nam.",
+"Quy định chức trách, nhiệm vụ và mối quan hệ công tác; chế độ làm việc, công tác, chiến đấu, hội họp, huấn luyện, học tập, bảo mật, nghỉ ngơi; quản lý tài liệu, vũ khí, công cụ hỗ trợ, vật chứng, phương tiện nghiệp vụ, tài chính, tài sản; sử dụng trang phục; tư thế, lễ tiết, tác phong; nội vụ, vệ sinh công sở của công an các đơn vị, địa phương và cán bộ, chiến sĩ CAND.",
+"Quy định lực lượng CAND khi thực hiện nhiệm vụ phải theo quy trình, quy chế, chế độ công tác, lề lối làm việc, tác phong chính quy."
+],ans:1,
+oldAns:"Quy định chức trách, nhiệm vụ và mối quan hệ công tác; chế độ làm việc, công tác, chiến đấu, hội họp, huấn luyện, học tập, bảo mật, nghỉ ngơi; quản lý tài liệu, vũ khí, công cụ hỗ trợ, vật chứng, phương tiện nghiệp vụ, tài chính, tài sản; sử dụng trang phục; tư thế, lễ tiết, tác phong; nội vụ, vệ sinh công sở của công an các đơn vị, địa phương và cán bộ, chiến sĩ CAND."},
+
+{id:2,q:"Điều lệnh nội vụ CAND gồm có bao nhiêu chương, bao nhiêu điều?",
+opts:["Có 5 chương, 62 điều","Có 12 chương, 53 điều","Có 8 chương, 50 điều."],ans:2,
+oldAns:"Có 8 chương, 50 điều."},
+
+{id:3,q:"Điều lệnh nội vụ CAND quy định có mấy chức trách, nhiệm vụ của lãnh đạo chỉ huy Công an các cấp?",
+opts:["Có 03 chức trách, nhiệm vụ.","Có 05 chức trách, nhiệm vụ.","Có 07 chức trách, nhiệm vụ."],ans:1,
+oldAns:"Có 05 chức trách, nhiệm vụ."},
+
+{id:4,q:"Điều lệnh nội vụ CAND quy định có mấy chức trách, nhiệm vụ của CBCS CAND?",
+opts:["Có 03 chức trách, nhiệm vụ.","Có 05 chức trách, nhiệm vụ.","Có 07 chức trách, nhiệm vụ."],ans:2,
+oldAns:"Có 07 chức trách, nhiệm vụ."},
+
+{id:5,q:"Phương án nào sau đây chỉ rõ chức trách, nhiệm vụ của lãnh đạo chỉ huy Công an các cấp về công tác xây dựng lực lượng CAND?",
+opts:[
+"Thực hiện nguyên tắc tập trung dân chủ, tập thể lãnh đạo, cá nhân phụ trách, chế độ một người chỉ huy và quy chế hoạt động của cấp ủy đảng cấp trên; duy trì thực hiện nghiêm túc chế độ làm việc của lãnh đạo, chỉ huy và đơn vị.",
+"Thực hiện công tác giáo dục chính trị tư tưởng; xây dựng và kiện toàn tổ chức bộ máy; quy hoạch, đào tạo và bồi dưỡng cán bộ, thực hiện nghiêm túc chế độ quản lý cán bộ; chăm lo xây dựng, củng cố và tăng cường đoàn kết nội bộ; động viên, khen thưởng kịp thời và xử lý kỷ luật nghiêm theo đúng quy định của Nhà nước và của Bộ Công an.",
+"Quản lý tài chính, kinh phí hậu cần, phương tiện, trang thiết bị kỹ thuật nghiệp vụ của đơn vị đúng quy định, bảo đảm yêu cầu công tác, chiến đấu."
+],ans:1,
+oldAns:"Thực hiện công tác giáo dục chính trị tư tưởng; xây dựng và kiện toàn tổ chức bộ máy; quy hoạch, đào tạo và bồi dưỡng cán bộ, thực hiện nghiêm túc chế độ quản lý cán bộ; chăm lo xây dựng, củng cố và tăng cường đoàn kết nội bộ; động viên, khen thưởng kịp thời và xử lý kỷ luật nghiêm theo đúng quy định của Nhà nước và của Bộ Công an."},
+
+{id:6,q:"Quan hệ giữa cấp ủy đảng và thủ trưởng Công an cùng cấp là mối quan hệ như thế nào?",
+opts:["Quan hệ lãnh đạo và chấp hành.","Quan hệ đồng cấp.","Quan hệ cấp trên, cấp dưới."],ans:0,
+oldAns:"Quan hệ lãnh đạo và chấp hành."},
+
+{id:7,q:"Quan hệ giữa thủ trưởng với các phó thủ trưởng là mối quan hệ như thế nào?",
+opts:[
+"Là quan hệ cấp trên với cấp dưới theo nguyên tắc cấp dưới phục tùng cấp trên.",
+"Là quan hệ giữa người chỉ huy cao nhất của đơn vị với cấp phó cùng cấp.",
+"Là quan hệ bình đẳng trong tập thể lãnh đạo, chỉ huy, thực hiện theo phân công nhiệm vụ được giao."
+],ans:1,
+oldAns:"Là quan hệ giữa người chỉ huy cao nhất của đơn vị với cấp phó cùng cấp."},
+
+{id:8,q:"Quan hệ giữa lãnh đạo, chỉ huy với CBCS thuộc quyền, khi thi hành nhiệm vụ, cấp dưới phải tuân thủ điều gì?",
+opts:[
+"Phải tuyệt đối chấp hành mệnh lệnh cấp trên trong khi thi hành nhiệm vụ.",
+"Phải tôn trọng, lắng nghe ý kiến của cấp trên.",
+"Phải nghiêm chỉnh chấp hành nhiệm vụ được giao."
+],ans:0,
+oldAns:"Phải tuyệt đối chấp hành mệnh lệnh cấp trên trong khi thi hành nhiệm vụ."},
+
+{id:9,q:"Quan hệ giữa CBCS CAND là mối quan hệ như thế nào?",
+opts:[
+"Là quan hệ bình đẳng, tôn trọng lẫn nhau, cùng thực hiện nhiệm vụ được cấp trên giao.",
+"Là quan hệ xã hội trong cùng cơ quan, đơn vị, giúp đỡ nhau thực hiện nhiệm vụ được giao.",
+"Là quan hệ đồng chí, đồng đội, đồng nghiệp, tôn trọng, đoàn kết, thương yêu, giúp đỡ nhau hoàn thành nhiệm vụ."
+],ans:2,
+oldAns:"Là quan hệ đồng chí, đồng đội, đồng nghiệp, tôn trọng, đoàn kết, thương yêu, giúp đỡ nhau hoàn thành nhiệm vụ."},
+
+{id:10,q:"Khi thủ trưởng đi công tác vắng thì phải chỉ định ai là người thay thế mình?",
+opts:[
+"Chỉ định một phó thủ trưởng thay mình phụ trách đơn vị.",
+"Chỉ định một đồng chí trong cấp ủy thay thế mình điều hành công việc.",
+"Chỉ định đồng chí sĩ quan trực ban đơn vị thay thế mình điều hành công việc."
+],ans:0,
+oldAns:"Chỉ định một phó thủ trưởng thay mình phụ trách đơn vị."},
+
+{id:11,q:"Điều lệnh nội vụ CAND quy định khi làm nhiệm vụ, quan hệ tiếp xúc với tổ chức, cá nhân nước ngoài, CBCS CAND phải chấp hành những quy định nào?",
+opts:[
+"Phải chấp hành nghiêm chỉnh pháp luật của Nhà nước, các điều ước quốc tế mà Việt Nam và nước đó đã ký kết hoặc cùng gia nhập, phê chuẩn, các quy định của Bộ trưởng Bộ Công an và quy chế ngoại giao; phải tôn trọng pháp luật, phong tục tập quán của nước sở tại; không làm điều gì tổn hại đến danh dự của Tổ quốc, của Đảng và lực lượng CAND Việt Nam.",
+"Phải có thái độ đúng mực tôn trọng mọi người, không làm điều gì tổn hại đến danh dự của Tổ quốc và lực lượng CAND.",
+"Phải chấp hành nghiêm chỉnh pháp luật của Nhà nước, thẳng thắn trao đổi công việc với tổ chức, cá nhân nước ngoài khi họ có ý kiến đề xuất, kiến nghị."
+],ans:0,
+oldAns:"Phải chấp hành nghiêm chỉnh pháp luật của Nhà nước, các điều ước quốc tế mà Việt Nam và nước đó đã ký kết hoặc cùng gia nhập, phê chuẩn, các quy định của Bộ trưởng Bộ Công an và quy chế ngoại giao; phải tôn trọng pháp luật, phong tục tập quán của nước sở tại; không làm điều gì tổn hại đến danh dự của Tổ quốc, của Đảng và lực lượng CAND Việt Nam."},
+
+{id:12,q:"Cấp trên ra chỉ thị, mệnh lệnh như thế nào cho đúng với quy định Điều lệnh nội vụ CAND?",
+opts:[
+"Tùy tình hình thực tế công việc để ra chỉ thị, mệnh lệnh đối với CBCS.",
+"Ra chỉ thị, mệnh lệnh thông qua CBCS có trình độ chuyên môn khác.",
+"Cấp trên ra chỉ thị, mệnh lệnh phải qua từng cấp, từ trên xuống dưới theo hệ thống tổ chức của lực lượng CAND."
+],ans:2,
+oldAns:"Cấp trên ra chỉ thị, mệnh lệnh phải qua từng cấp, từ trên xuống dưới theo hệ thống tổ chức của lực lượng CAND."},
+
+{id:13,q:"Theo Điều lệnh nội vụ CAND, khi cần thiết, cấp trên có được ra chỉ thị, mệnh lệnh trực tiếp không?",
+opts:[
+"Không được ra chỉ thị, mệnh lệnh trực tiếp, phải qua từng cấp.",
+"Được ra chỉ thị, mệnh lệnh trực tiếp không qua thủ trưởng quản lý CBCS.",
+"Thực hiện theo quy chế làm việc của đơn vị."
+],ans:1,
+oldAns:"Được ra chỉ thị, mệnh lệnh trực tiếp không qua thủ trưởng quản lý CBCS."},
+
+{id:14,q:"Người nhận chỉ thị, mệnh lệnh trực tiếp của cấp trên phải thực hiện thế nào cho đúng với quy định của Điều lệnh nội vụ CAND?",
+opts:[
+"Phải thi hành ngay với tinh thần trách nhiệm, khẩn trương, nghiêm túc.",
+"Báo cáo với thủ trưởng trực tiếp của mình biết nội dung công việc cấp trên giao, để xin ý kiến chỉ đạo",
+"Phải thi hành ngay, đồng thời phải báo cáo với thủ trưởng trực tiếp của mình biết nội dung công việc cấp trên giao (trừ trường hợp cấp trên ra chỉ thị, mệnh lệnh yêu cầu không báo cáo nội dung với thủ trưởng trực tiếp)."
+],ans:2,
+oldAns:"Phải thi hành ngay, đồng thời phải báo cáo với thủ trưởng trực tiếp của mình biết nội dung công việc cấp trên giao (trừ trường hợp cấp trên ra chỉ thị, mệnh lệnh yêu cầu không báo cáo nội dung với thủ trưởng trực tiếp)."},
+
+{id:15,q:"Khi cấp trên ra chỉ thị, mệnh lệnh, nếu thấy không phù hợp thì cấp dưới phải làm gì cho đúng với quy định của Điều lệnh nội vụ CAND?",
+opts:[
+"Báo cáo lý do và không thực hiện chỉ thị, mệnh lệnh.",
+"Thực hiện ngay với tinh thần trách nhiệm, khẩn trương, chủ động, sáng tạo, sau khi xong việc sẽ đề đạt ý kiến với người ra chỉ thị, mệnh lệnh.",
+"Đề đạt ý kiến với người ra chỉ thị, mệnh lệnh; nếu người ra chỉ thị, mệnh lệnh chưa thay đổi ý kiến, thì vẫn phải nghiêm chỉnh chấp hành."
+],ans:2,
+oldAns:"Đề đạt ý kiến với người ra chỉ thị, mệnh lệnh; nếu người ra chỉ thị, mệnh lệnh chưa thay đổi ý kiến, thì vẫn phải nghiêm chỉnh chấp hành."},
+
+{id:16,q:"Khi người thi hành chỉ thị, mệnh lệnh có ý kiến đề đạt, thì người ra chỉ thị, mệnh lệnh cần xử lý như thế nào cho đúng với quy định Điều lệnh nội vụ CAND?",
+opts:[
+"Không chấp nhận và yêu cầu người nhận chỉ thị, mệnh lệnh phải thực hiện ngay.",
+"Người ra chỉ thị, mệnh lệnh phải nghiên cứu xem xét; nếu thấy chỉ thị, mệnh lệnh chưa đúng, phải kịp thời điều chỉnh, bổ sung, sửa đổi.",
+"Yêu cầu người nhận chỉ thị, mệnh lệnh phải làm ngay; ý kiến đề đạt sẽ được nghiên cứu, xem xét, giải quyết sau."
+],ans:1,
+oldAns:"Người ra chỉ thị, mệnh lệnh phải nghiên cứu xem xét; nếu thấy chỉ thị, mệnh lệnh chưa đúng, phải kịp thời điều chỉnh, bổ sung, sửa đổi."},
+
+{id:17,q:"Cấp dưới sau khi thực hiện xong chỉ thị, mệnh lệnh của cấp trên thì phải có trách nhiệm gì theo đúng quy định của Điều lệnh nội vụ CAND?",
+opts:[
+"Báo cáo chính xác, đầy đủ, kịp thời kết quả thực hiện với lãnh đạo trực tiếp phụ trách.",
+"Báo cáo chính xác, đầy đủ, kịp thời kết quả thực hiện với lãnh đạo đơn vị, không nhất thiết phải báo cáo lãnh đạo trực tiếp.",
+"Báo cáo chính xác, đầy đủ, kịp thời kết quả thực hiện với người ra chỉ thị, mệnh lệnh."
+],ans:2,
+oldAns:"Báo cáo chính xác, đầy đủ, kịp thời kết quả thực hiện với người ra chỉ thị, mệnh lệnh."},
+
+{id:18,q:"Điều lệnh nội vụ CAND quy định CBCS phải chấp hành kỷ luật công tác như thế nào?",
+opts:[
+"CBCS phải có mặt tại nơi làm việc trước 05 phút và nghỉ đúng giờ quy định.",
+"CBCS có mặt tại nơi làm việc trước 10 phút và nghỉ đúng giờ quy định.",
+"Có mặt tại nơi làm việc trước 15 phút và nghỉ đúng giờ quy định."
+],ans:0,
+oldAns:"CBCS phải có mặt tại nơi làm việc trước 05 phút và nghỉ đúng giờ quy định."},
+
+{id:19,q:"Điều lệnh nội vụ CAND quy định trong chiến đấu, CBCS CAND phải thực hiện yêu cầu nào?",
+opts:[
+"Phải nêu cao chủ nghĩa anh hùng cách mạng, mưu trí, dũng cảm, sẵn sàng hy sinh để bảo vệ Tổ quốc, bảo vệ Đảng, Nhà nước, Nhân dân và chế độ xã hội chủ nghĩa; trong bất kỳ hoàn cảnh nào cũng phải kiên quyết bảo vệ đồng đội, bảo vệ nhân dân, bảo vệ vũ khí, phương tiện chiến đấu, hồ sơ, tài liệu; giữ vững khí tiết của người Công an cách mạng.",
+"Chấp hành nghiêm kỷ luật, mệnh lệnh, sẵn sàng nhận nhiệm vụ được giao.",
+"Thực hiện nghiêm các quy định về phương án chiến đấu, tuyệt đối bảo vệ bí mật."
+],ans:0,
+oldAns:"Phải nêu cao chủ nghĩa anh hùng cách mạng, mưu trí, dũng cảm, sẵn sàng hy sinh để bảo vệ Tổ quốc, bảo vệ Đảng, Nhà nước, Nhân dân và chế độ xã hội chủ nghĩa; trong bất kỳ hoàn cảnh nào cũng phải kiên quyết bảo vệ đồng đội, bảo vệ nhân dân, bảo vệ vũ khí, phương tiện chiến đấu, hồ sơ, tài liệu; giữ vững khí tiết của người Công an cách mạng."},
+
+{id:20,q:"Khi gặp tình huống khẩn cấp, đột xuất, bất ngờ nguy hại đến an ninh trật tự, CBCS phải làm gì cho đúng với Điều lệnh nội vụ CAND?",
+opts:[
+"Thông báo cho đơn vị Công an gần nhất biết để giải quyết.",
+"Tham gia giải quyết và tìm mọi cách ngăn chặn hậu quả xảy ra và báo ngay cho đơn vị Công an hoặc chính quyền địa phương nơi gần nhất để giải quyết.",
+"Xác định không phải nhiệm vụ của mình nên không cần giải quyết."
+],ans:1,
+oldAns:"Tham gia giải quyết và tìm mọi cách ngăn chặn hậu quả xảy ra và báo ngay cho đơn vị Công an hoặc chính quyền địa phương nơi gần nhất để giải quyết."},
+
+{id:21,q:"Điều lệnh nội vụ CAND quy định CBCS phải chấp hành kỷ luật khi biệt phái, xã hội hóa như thế nào?",
+opts:[
+"Chấp hành nghiêm túc nội quy của đơn vị, không gây ảnh hưởng đến người khác.",
+"Nêu cao tinh thần trách nhiệm, tư thế, lễ tiết tác phong nghiêm túc, giữ gìn phẩm chất, tư cách người Công an cách mệnh.",
+"Chấp hành nghiêm các nguyên tắc, chế độ công tác do Bộ trưởng Bộ Công an quy định; luôn giữ gìn phẩm chất, tư cách người Công an cách mạng."
+],ans:2,
+oldAns:"Chấp hành nghiêm các nguyên tắc, chế độ công tác do Bộ trưởng Bộ Công an quy định; luôn giữ gìn phẩm chất, tư cách người Công an cách mạng."},
+
+{id:22,q:"CBCS khi tham gia huấn luyện điều lệnh, quân sự, võ thuật phải chấp hành quy định nào cho đúng?",
+opts:[
+"Chấp hành nghiêm nội quy kỷ luật nơi luyện tập, thao trường và mệnh lệnh của người chỉ huy.",
+"Chấp hành nghiêm nội quy, giữ đúng tư thế, lễ tiết tác phong, kỷ luật nơi tập luyện.",
+"Mang trang bị đầy đủ phương tiện phục vụ công tác huấn luyện."
+],ans:0,
+oldAns:"Chấp hành nghiêm nội quy kỷ luật nơi luyện tập, thao trường và mệnh lệnh của người chỉ huy."},
+
+{id:23,q:"Theo Điều lệnh nội vụ CAND, khi tổ chức hội họp, buổi lễ, người dự hội họp, buổi lễ có được ủy quyền cho người khác đi thay không?",
+opts:[
+"Được ủy quyền cho người khác đi thay",
+"Không được ủy quyền cho người khác đi thay.",
+"Được ủy quyền nhưng người đi dự thay phải được cấp triệu tập đồng ý."
+],ans:2,
+oldAns:"Được ủy quyền nhưng người đi dự thay phải được cấp triệu tập đồng ý."},
+
+{id:24,q:"Theo Điều lệnh nội vụ CAND việc tổ chức hội họp, học tập người chủ trì có phải chuẩn bị nội dung và thông báo cuộc họp không?",
+opts:[
+"Phải chuẩn bị nội dung và thông báo trước ít nhất 01 ngày (trừ trường hợp đột xuất hoặc để đảm bảo yêu cầu bí mật).",
+"Không phải thông báo cho CBCS vì hàng ngày CBCS đều phải đến đơn vị làm việc theo đúng giờ quy định, chỉ cần thông báo triệu tập họp.",
+"Thông báo trước hai giờ để đảm bảo thời gian chuẩn bị."
+],ans:0,
+oldAns:"Phải chuẩn bị nội dung và thông báo trước ít nhất 01 ngày (trừ trường hợp đột xuất hoặc để đảm bảo yêu cầu bí mật)."},
+
+{id:25,q:"Điều lệnh nội vụ CAND quy định, khi cấp trên tổ chức hội nghị, buổi lễ, CBCS dự rời khỏi nơi hội nghị, buổi lễ như thế nào?",
+opts:[
+"Rời khỏi nơi hội nghị, buổi lễ ngay sau khi người chủ trì tuyên bố kết thúc.",
+"Rời khỏi nơi hội nghị, buổi lễ cùng với lãnh đạo cấp trên.",
+"Rời khỏi nơi hội họp, buổi lễ, học tập sau khi người chủ trì tuyên bố kết thúc, lãnh đạo cấp trên ra về."
+],ans:2,
+oldAns:"Rời khỏi nơi hội họp, buổi lễ, học tập sau khi người chủ trì tuyên bố kết thúc, lãnh đạo cấp trên ra về."},
+
+{id:26,q:"Theo Điều lệnh nội vụ CAND: Thủ trưởng đơn vị quyết định tổ chức giao ban đột xuất, giao ban chuyên đề, giao ban theo cụm công tác phải căn cứ vào đâu?",
+opts:[
+"Căn cứ theo chương trình, kế hoạch công tác của đơn vị.",
+"Căn cứ theo ý kiến đề xuất của một phó thủ trưởng.",
+"Căn cứ tình hình và tính chất công tác."
+],ans:2,
+oldAns:"Căn cứ tình hình và tính chất công tác."},
+
+{id:27,q:"Điều lệnh nội vụ CAND quy định nhiệm vụ của lãnh đạo trực chỉ huy như thế nào?",
+opts:[
+"Phải nắm vững tình hình mọi mặt của đơn vị để xử lý và giải quyết các công việc theo đúng chức trách, nhiệm vụ, quyền hạn được giao.",
+"Nắm vững tình hình về công tác xây dựng lực lượng để xử lý và giải quyết.",
+"Nắm vững quân số đơn vị, xử lý và giải quyết các yêu cầu công tác khác được giao."
+],ans:0,
+oldAns:"Phải nắm vững tình hình mọi mặt của đơn vị để xử lý và giải quyết các công việc theo đúng chức trách, nhiệm vụ, quyền hạn được giao."},
+
+{id:28,q:"Đồng chí cho biết nhiệm vụ của trực ban đơn vị?",
+opts:[
+"Giúp thủ trưởng nắm vững quân số, vũ khí, trang bị phương tiện; đề xuất xử lý và giải quyết các yêu cầu công tác, chiến đấu, xây dựng lực lượng, hậu cần kỹ thuật; phải đeo băng trực ban; ghi chép đầy đủ tình hình ca trực và các phương tiện cần thiết phục vụ công tác vào sổ trực ban, hết ca trực phải ký bàn giao cho ca sau.",
+"Nắm tình hình của đơn vị về công tác chính trị tư tưởng.",
+"Đôn đốc CBCS thực hiện nhiệm vụ trong ngày."
+],ans:0,
+oldAns:"Giúp thủ trưởng nắm vững quân số, vũ khí, trang bị phương tiện; đề xuất xử lý và giải quyết các yêu cầu công tác, chiến đấu, xây dựng lực lượng, hậu cần kỹ thuật; phải đeo băng trực ban; ghi chép đầy đủ tình hình ca trực và các phương tiện cần thiết phục vụ công tác vào sổ trực ban, hết ca trực phải ký bàn giao cho ca sau."},
+
+{id:29,q:"Đồng chí hiểu thế nào là thường trực chiến đấu?",
+opts:[
+"Có thể ra khỏi cơ quan nhưng khi triệu tập phải có mặt.",
+"Chỉ làm việc theo giờ hành chính, hoàn thành các nhiệm vụ được giao xong thì về gia đình.",
+"Phải có mặt tại đơn vị để sẵn sàng giải quyết công việc khi có yêu cầu."
+],ans:2,
+oldAns:"Phải có mặt tại đơn vị để sẵn sàng giải quyết công việc khi có yêu cầu."},
+
+{id:30,q:"CBCS thường trực chiến đấu phải thực hiện những yêu cầu nào cho đúng với Điều lệnh nội vụ CAND?",
+opts:[
+"Trực tại nhà, khi nào lãnh đạo cấp trên triệu tập thì có mặt.",
+"Giờ hành chính trực tại đơn vị, hết giờ thì trực tại nhà khi cần liên lạc qua điện thoại.",
+"Phải có mặt tại đơn vị, mặc trang phục CAND đúng quy định, sẵn sàng giải quyết công việc khi có yêu cầu."
+],ans:2,
+oldAns:"Phải có mặt tại đơn vị, mặc trang phục CAND đúng quy định, sẵn sàng giải quyết công việc khi có yêu cầu."},
+
+{id:31,q:"Điều lệnh nội vụ CAND quy định Công an đơn vị, địa phương, CBCS chấp hành chế độ bảo mật như thế nào?",
+opts:[
+"Phải chấp hành nghiêm các quy định về bảo vệ bí mật của Đảng, Nhà nước và của Bộ trưởng Bộ Công an.",
+"Phải chấp hành nghiêm các quy định về bảo vệ bí mật của cơ quan bảo vệ bí mật.",
+"Phải chấp hành nghiêm các quy định về quy chế, chế độ công tác bảo mật của Bộ Công an và các Bộ ngành khác."
+],ans:0,
+oldAns:"Phải chấp hành nghiêm các quy định về bảo vệ bí mật của Đảng, Nhà nước và của Bộ trưởng Bộ Công an."},
+
+{id:32,q:"Khi phát hiện có dấu hiệu lộ, lọt, mất bí mật nhà nước, CBCS phải làm gì cho đúng với quy định của Điều lệnh nội vụ CAND?",
+opts:[
+"Nhắc nhở người để lộ, lọt bí mật và yêu cầu người đó phải rút kinh nghiệm để sửa chữa.",
+"Kịp thời có biện pháp ngăn chặn và báo cáo ngay cấp có thẩm quyền xem xét, xử lý.",
+"Đề xuất lãnh đạo cấp trên có hình thức kỷ luật người để lộ, lọt bí mật."
+],ans:1,
+oldAns:"Kịp thời có biện pháp ngăn chặn và báo cáo ngay cấp có thẩm quyền xem xét, xử lý."},
+
+{id:33,q:"Điều lệnh nội vụ CAND quy định việc quản lý tài liệu được thực hiện như thế nào?",
+opts:[
+"Phải phân loại, quản lý, sử dụng theo đúng quy định của pháp luật về bảo vệ bí mật Nhà nước; hết giờ làm việc, hồ sơ, tài liệu phải sắp xếp gọn gàng và bảo quản theo quy định của pháp luật và của Bộ Công an; làm việc ngoài giờ tại cơ quan, đơn vị hoặc mang theo tài liệu nghiệp vụ khi đi công tác phải được sự đồng ý của thủ trưởng đơn vị và có trách nhiệm bảo vệ an toàn tài liệu.",
+"Quản lý tài liệu theo nội quy đơn vị, quản lý, sử dụng theo quy định bảo mật.",
+"Quản lý tài liệu theo yêu cầu của thủ trưởng đơn vị và có trách nhiệm bảo vệ an toàn."
+],ans:0,
+oldAns:"Phải phân loại, quản lý, sử dụng theo đúng quy định của pháp luật về bảo vệ bí mật Nhà nước; hết giờ làm việc, hồ sơ, tài liệu phải sắp xếp gọn gàng và bảo quản theo quy định của pháp luật và của Bộ Công an; làm việc ngoài giờ tại cơ quan, đơn vị hoặc mang theo tài liệu nghiệp vụ khi đi công tác phải được sự đồng ý của thủ trưởng đơn vị và có trách nhiệm bảo vệ an toàn tài liệu."},
+
+{id:34,q:"Theo Điều lệnh nội vụ CAND công tác quản lý vũ khí, công cụ hỗ trợ, phương tiện nghiệp vụ thực hiện như thế nào?",
+opts:[
+"Quản lý chặt chẽ theo quy định, bảo đảm an toàn; có giấy phép sử dụng và sổ theo dõi; phân công cán bộ quản lý phải có chuyên môn về quản lý vũ khí, vật liệu nổ, công cụ hỗ trợ và ghi chép, giao nhận, bảo dưỡng theo quy định, bảo đảm yêu cầu sẵn sàng chiến đấu; phải chấp hành yêu cầu khi kiểm tra.",
+"Giao cho cán bộ trực ban quản lý",
+"Thường xuyên kiểm tra công tác quản lý vũ khí."
+],ans:0,
+oldAns:"Quản lý chặt chẽ theo quy định, bảo đảm an toàn; có giấy phép sử dụng và sổ theo dõi; phân công cán bộ quản lý phải có chuyên môn về quản lý vũ khí, vật liệu nổ, công cụ hỗ trợ và ghi chép, giao nhận, bảo dưỡng theo quy định, bảo đảm yêu cầu sẵn sàng chiến đấu; phải chấp hành yêu cầu khi kiểm tra."},
+
+{id:35,q:"Khi ra, vào cổng trụ sở cơ quan, doanh trại, chiến sĩ bảo vệ tại cổng yêu cầu xuất trình giấy tờ để kiểm tra, đ/c phải làm gì cho đúng với quy định của Điều lệnh nội vụ CAND?",
+opts:[
+"Không xuất trình giấy tờ, cho rằng chiến sĩ bảo vệ không nắm vững được cán bộ thường xuyên ra, vào cơ quan, đơn vị.",
+"Phải xuất trình giấy tờ khi có yêu cầu.",
+"Giải thích với chiến sĩ bảo vệ biết mình làm cùng cơ quan."
+],ans:1,
+oldAns:"Phải xuất trình giấy tờ khi có yêu cầu."},
+
+{id:36,q:"Trong cơ quan, doanh trại, nơi ngủ, nghỉ của CBCS sắp xếp như thế nào cho đúng với Điều lệnh nội vụ CAND?",
+opts:[
+"Phải trang trí đẹp, gọn gàng, giữ gìn vệ sinh chung",
+"Phải gọn gàng ngăn nắp theo quy định của đơn vị.",
+"Phải sắp xếp gọn gàng, ngăn nắp, vệ sinh sạch sẽ."
+],ans:2,
+oldAns:"Phải sắp xếp gọn gàng, ngăn nắp, vệ sinh sạch sẽ."},
+
+{id:37,q:"Khi được giới thiệu là đại biểu đến dự trong hội nghị, hội thi, hội thao, buổi lễ, sinh hoạt, học tập, trường hợp đồng chí đang ngồi ở vị trí trên lễ đài thì phải thực hiện chào như thế nào?",
+opts:[
+"Đứng dậy đi về giữa lễ đài thực hiện động tác chào.",
+"Đứng dậy hướng về phía đơn vị thực hiện động tác chào.",
+"Đứng dậy đi về đứng trên bục thực hiện động tác chào."
+],ans:1,
+oldAns:"Đứng dậy hướng về phía đơn vị thực hiện động tác chào."},
+
+{id:38,q:"Khi có đoàn kiểm tra hoặc cấp trên đến thăm, làm việc với đơn vị, nếu đơn vị không đứng thành hàng ngũ, đồng chí chỉ huy hoặc trực ban đơn vị phải làm gì?",
+opts:[
+"Hô “nghiêm”, chào báo cáo cấp trên.",
+"Cho đội hình giải tán, nhanh chóng mời cấp trên hoặc trưởng đoàn vào phòng làm việc để tiếp đón.",
+"Tập hợp đơn vị, chỉnh đốn hàng ngũ, hô nghiêm, chào báo cáo cấp trên."
+],ans:0,
+oldAns:"Hô “nghiêm”, chào báo cáo cấp trên."},
+
+{id:39,q:"Khi có đoàn kiểm tra hoặc cấp trên đến thăm, làm việc với đơn vị, nếu đơn vị đang đứng thành hàng ngũ, là chỉ huy hoặc trực ban đơn vị, đồng chí làm như thế nào cho đúng Điều lệnh nội vụ CAND?",
+opts:[
+"Chỉnh đốn đội hình rồi chờ cấp trên hoặc trưởng đoàn ra chỉ thị, mệnh lệnh, xong cán bộ, chiến sĩ vỗ tay chào mừng (nếu trong tay không giữ phương tiện dụng cụ gì).",
+"Chỉnh đốn đội hình, chào báo cáo cấp trên hoặc trưởng đoàn theo điều lệnh đội ngũ.",
+"Cho đội hình giải tán, nhanh chóng mời cấp trên hoặc trưởng đoàn vào phòng làm việc để tiếp đón."
+],ans:1,
+oldAns:"Chỉnh đốn đội hình, chào báo cáo cấp trên hoặc trưởng đoàn theo điều lệnh đội ngũ."},
+
+{id:40,q:"Khi có đoàn kiểm tra hoặc cấp trên đến thăm, làm việc, nếu đơn vị đang làm việc, hội họp, học tập hoặc sinh hoạt tập trung thì đồng chí chỉ huy hoặc trực ban đơn vị phải làm gì?",
+opts:[
+"Hô “nghiêm”, chào báo cáo cấp trên.",
+"Hô “ nghiêm” (nếu cán bộ, chiến sĩ đơn vị đang đứng) hoặc hô “ đơn vị chú ý”, “đứng dậy” (nếu cán bộ, chiến sĩ đơn vị đang ngồi), hô “nghiêm”, sau đó chào báo cáo cấp trên theo Điều lệnh đội ngũ.",
+"Cho đội hình giải tán, nhanh chóng mời cấp trên hoặc trưởng đoàn vào phòng làm việc để tiếp đón."
+],ans:1,
+oldAns:"Hô “ nghiêm” (nếu cán bộ, chiến sĩ đơn vị đang đứng) hoặc hô “ đơn vị chú ý”, “đứng dậy” (nếu cán bộ, chiến sĩ đơn vị đang ngồi), hô “nghiêm”, sau đó chào báo cáo cấp trên theo Điều lệnh đội ngũ."},
+
+{id:41,q:"Khi có đoàn kiểm tra hoặc cấp trên đến thăm, làm việc với đơn vị, trước khi cấp trên ra về, chỉ huy hay trực ban đơn vị phải làm gì?",
+opts:[
+"Cho đơn vị giải tán, đợi cấp trên hoặc đoàn kiểm tra ra về mới cho đơn vị tiếp tục làm việc.",
+"Hô “nghiêm” (nếu cán bộ, chiến sĩ đơn vị đang đứng) hoặc hô “đơn vị đứng dậy” (nếu cán bộ, chiến sĩ đơn vị đang ngồi), hô “nghiêm”, chờ cấp trên ra về rồi mới cho đơn vị tiếp tục làm việc hoặc giải tán.",
+"Cho đơn vị tiếp tục làm việc bình thường, đồng chí chỉ huy tiễn đoàn kiểm tra hoặc cấp trên ra về."
+],ans:1,
+oldAns:"Hô “nghiêm” (nếu cán bộ, chiến sĩ đơn vị đang đứng) hoặc hô “đơn vị đứng dậy” (nếu cán bộ, chiến sĩ đơn vị đang ngồi), hô “nghiêm”, chờ cấp trên ra về rồi mới cho đơn vị tiếp tục làm việc hoặc giải tán."},
+
+{id:42,q:"Điều lệnh nội vụ CAND quy định: Khi giao tiếp với cá nhân thuộc đoàn khách của quốc gia, tổ chức quốc tế đến thăm, CBCS CAND xưng hô thế nào cho đúng với quy định?",
+opts:[
+"Tùy theo quan hệ ngoại giao của Việt Nam với quốc gia, tổ chức quốc tế đó có thể gọi là “đồng chí” hoặc “ngài”, “ông”, “bà”, “vương hiệu”, “tước hiệu” hoặc theo thông lệ ngoại giao, xưng “tôi” cho phù hợp.",
+"Tùy theo quan hệ ngoại giao với quốc gia, tổ chức quốc tế khách đến thăm để xưng hô cho phù hợp.",
+"Tùy theo khách đến thăm để xưng hô cho phù hợp."
+],ans:0,
+oldAns:"Tùy theo quan hệ ngoại giao của Việt Nam với quốc gia, tổ chức quốc tế đó có thể gọi là “đồng chí” hoặc “ngài”, “ông”, “bà”, “vương hiệu”, “tước hiệu” hoặc theo thông lệ ngoại giao, xưng “tôi” cho phù hợp."},
+
+{id:43,q:"Điều lệnh nội vụ CAND quy định: Khi làm nhiệm vụ phải ăn ở, sinh hoạt tại nhà dân, CBCS cần thực hiện những yêu cầu gì?",
+opts:[
+"Phải tôn trọng nếp sống của gia đình và địa phương; tích cực tham gia lao động sản xuất, giúp dân phát triến kinh tế, xóa đói giảm nghèo.",
+"Phải tích cực tuyên truyền, vận động xóa bỏ việc trồng cây thuốc phiện.",
+"Phải giữ đúng tư thế, lễ tết, tác phong; tôn trọng nếp sống của gia đình, phong tục, tập quán của địa phương và làm tốt công tác dân vận."
+],ans:2,
+oldAns:"Phải giữ đúng tư thế, lễ tết, tác phong; tôn trọng nếp sống của gia đình, phong tục, tập quán của địa phương và làm tốt công tác dân vận."},
+
+{id:44,q:"Điều lệnh nội vụ CAND quy định CBCS CAND khi sinh hoạt ở gia đình, nơi cư trú và những nơi khác phải thực hiện những yêu cầu gì?",
+opts:[
+"Phải tích cực lao động sản xuất, phát triển kinh tế gia đình vững mạnh.",
+"Phải tích cực trong đấu tranh phòng, chống tội phạm, đảm bảo an ninh trật tự.",
+"Phải gương mẫu chấp hành chủ trương, đường lối, chính sách của Đảng, pháp luật của Nhà nước, quy định của địa phương; đoàn kết với Nhân dân nơi cư trú; trong quan hệ gia đình phải hiếu thảo, bình đẳng, hòa thuận, giúp đỡ nhau cùng tiến bộ, thực hiện nếp sống văn minh, gia đình văn hóa."
+],ans:2,
+oldAns:"Phải gương mẫu chấp hành chủ trương, đường lối, chính sách của Đảng, pháp luật của Nhà nước, quy định của địa phương; đoàn kết với Nhân dân nơi cư trú; trong quan hệ gia đình phải hiếu thảo, bình đẳng, hòa thuận, giúp đỡ nhau cùng tiến bộ, thực hiện nếp sống văn minh, gia đình văn hóa."},
+
+{id:45,q:"Khi tiếp xúc với người có hành vi vi phạm pháp luật, CBCS ứng xử như thế nào cho đúng với Điều lệnh nội vụ CAND?",
+opts:[
+"Phải giữ đúng tư thế, lễ tiết, tác phong, có thái độ ứng xử đúng mực; không có lời nói, cử chỉ, hành vi xúc phạm, phân biệt đối xử.",
+"Có thái độ bình tĩnh, khôn khéo để xử lý tình huống.",
+"Phải bình tĩnh, giữ đúng tư thế, tác phong; không phân biệt đối xử."
+],ans:0,
+oldAns:"Phải giữ đúng tư thế, lễ tiết, tác phong, có thái độ ứng xử đúng mực; không có lời nói, cử chỉ, hành vi xúc phạm, phân biệt đối xử."},
+
+{id:46,q:"Điều lệnh nội vụ CAND quy định: Ứng xử khi giao tiếp với Nhân dân như thế nào?",
+opts:[
+"Phải thể hiện thái độ ứng xử có văn hóa, tôn trọng, khiêm tốn, bình tĩnh, tận tình, chu đáo; thực hiện theo đúng quy định của pháp luật và của Bộ Công an; luôn nêu cao tinh thần trách nhiệm, không sách nhiễu, gây phiền hà với Nhân dân.",
+"Nêu cao tinh thần trách nhiệm thực hiện nhiệm vụ được giao, không gây khó khăn phiền hà với Nhân dân.",
+"Thực hiện đúng quy trình công tác."
+],ans:0,
+oldAns:"Phải thể hiện thái độ ứng xử có văn hóa, tôn trọng, khiêm tốn, bình tĩnh, tận tình, chu đáo; thực hiện theo đúng quy định của pháp luật và của Bộ Công an; luôn nêu cao tinh thần trách nhiệm, không sách nhiễu, gây phiền hà với Nhân dân."},
+
+{id:47,q:"Điều lệnh nội vụ CAND quy định: CBCS CAND khi giao tiếp qua các phương tiện thông tin cần đảm bảo những yêu cầu gì?",
+opts:[
+"Phải giới thiệu tên và đơn vị của mình; ngôn ngữ giao tiếp phải đúng mực, lịch sự, rõ ràng, mạch lạc; Nội dung trao đổi ngắn gọn, tập trung vào công việc; không tiện trả lời thì xin lỗi, không đột ngột ngắt cuộc trao đổi; thực hiện đúng quy định của pháp luật về bảo vệ bí mật nhà nước trong quá trình trao đổi thông tin, kết thúc cuộc trao đổi bằng lời chào hoặc cảm ơn.",
+"Cần trao đổi cụ thể, ngắn gọn, rõ ràng, dứt khoát, tập trung vào công việc đáp ứng được yêu cầu cuộc gọi.",
+"Phản ánh được nội dung cuộc trao đổi, giao tiếp, không phụ thuộc thời gian."
+],ans:0,
+oldAns:"Phải giới thiệu tên và đơn vị của mình; ngôn ngữ giao tiếp phải đúng mực, lịch sự, rõ ràng, mạch lạc; Nội dung trao đổi ngắn gọn, tập trung vào công việc; không tiện trả lời thì xin lỗi, không đột ngột ngắt cuộc trao đổi; thực hiện đúng quy định của pháp luật về bảo vệ bí mật nhà nước trong quá trình trao đổi thông tin, kết thúc cuộc trao đổi bằng lời chào hoặc cảm ơn."},
+
+{id:48,q:"Trường hợp người nhận thưởng có chức vụ, cấp bậc cao hơn người trao thưởng thì ai phải chào trước?",
+opts:[
+"Người nhận thưởng phải chào trước",
+"Người trao thưởng và người nhận thưởng cùng thực hiện động tác chào",
+"Người trao thưởng phải chào trước."
+],ans:2,
+oldAns:"Người trao thưởng phải chào trước."},
+
+{id:49,q:"Nghi lễ CAND quy định, trường hợp nhận phần thưởng nào phải có tổ Công an kỳ?",
+opts:["Nhận huy chương.","Nhận huy hiệu Đảng.","Huân chương, danh hiệu vinh dự nhà nước."],ans:2,
+oldAns:"Huân chương, danh hiệu vinh dự nhà nước."},
+
+{id:50,q:"Khi lãnh đạo cấp trên trao Huân chương, Huy chương hoặc Bằng khen, Giấy khen, trước khi nhận, CBCS phải thực hiện những động tác nào?",
+opts:[
+"Tiến 1 bước, đứng nghiêm thực hiện động tác chào.",
+"Tiến 1 bước, đứng nghiêm thực hiện động tác chào, cấp trên chào đáp lại (nếu thuộc lực lượng vũ trang), bắt tay.",
+"Tiến 1 bước, thực hiện động tác chào và chủ động đưa tay ra bắt tay cấp trên."
+],ans:1,
+oldAns:"Tiến 1 bước, đứng nghiêm thực hiện động tác chào, cấp trên chào đáp lại (nếu thuộc lực lượng vũ trang), bắt tay."},
+
+{id:51,q:"Chào cờ Tổ quốc định kỳ hàng tháng được tổ chức thời gian nào?",
+opts:[
+"Giờ làm việc buổi sáng, ngày thứ hai của tuần đầu tháng.",
+"Đầu giờ làm việc buổi sáng trong ngày làm việc đầu tiên của tuần đầu tháng (tuần đầu tháng được xác định là tuần làm việc đầu tiên của tháng không có ngày của tháng trước).",
+"Đầu giờ làm việc buổi sáng của ngày đầu tháng."
+],ans:1,
+oldAns:"Đầu giờ làm việc buổi sáng trong ngày làm việc đầu tiên của tuần đầu tháng (tuần đầu tháng được xác định là tuần làm việc đầu tiên của tháng không có ngày của tháng trước)."},
+
+{id:52,q:"Khi chào cờ Tổ quốc ngoài trời, đ/c đọc 5 lời thề danh dự đứng ở vị trí nào?",
+opts:[
+"Đứng bên phải, ngang hàng và cách chủ lễ 01 mét.",
+"Đứng bên trái, ngang hàng và cách chủ lễ 01 mét.",
+"Đứng bên trái, ngang hàng và cách chủ lễ 1,5 mét."
+],ans:1,
+oldAns:"Đứng bên trái, ngang hàng và cách chủ lễ 01 mét."},
+
+{id:53,q:"Những đơn vị có trụ sở độc lập chào cờ Tổ quốc ngoài trời, khi nghe dứt khẩu lệnh \"Chào cờ - chào\", những đồng chí nào phải thực hiện động tác chào?",
+opts:[
+"Chủ lễ, trực ban buổi lễ và toàn thể cán bộ, chiến sĩ thực hiện động tác chào.",
+"Cán bộ, chiến sĩ đứng hàng trên cùng thực hiện động tác chào.",
+"Đồng chí chủ lễ và trực ban buổi lễ."
+],ans:0,
+oldAns:"Chủ lễ, trực ban buổi lễ và toàn thể cán bộ, chiến sĩ thực hiện động tác chào."},
+
+{id:54,q:"Đồng chí cho biết vị trí của lãnh đạo và cán bộ, chiến sĩ khi dự lễ chào cờ Tổ quốc ở trong nhà có bàn, ghế ngồi?",
+opts:[
+"Thực hiện theo phân công của chủ lễ, theo nguyên tắc từ trên xuống dưới, cấp trên ngồi trước, cấp dưới ngồi sau, người có cấp bậc hàm cao hơn ngồi trước, người có cấp bậc hàm thấp hơn ngồi sau.",
+"Lãnh đạo đơn vị tham gia lễ chào cờ, lãnh đạo đơn vị trực thuộc đứng hàng ngang thứ nhất và hàng thứ 2, các hàng tiếp theo là cán bộ, chiến sĩ.",
+"Lãnh đạo đơn vị và lãnh đạo đơn vị trực thuộc đứng hàng ngang thứ nhất, các hàng ngang thứ hai trở xuống là CBCS."
+],ans:0,
+oldAns:"Thực hiện theo phân công của chủ lễ, theo nguyên tắc từ trên xuống dưới, cấp trên ngồi trước, cấp dưới ngồi sau, người có cấp bậc hàm cao hơn ngồi trước, người có cấp bậc hàm thấp hơn ngồi sau."},
+
+{id:55,q:"Khi chào cờ Tổ quốc trong nhà có bàn ghế ngồi, trực ban buổi lễ đứng ở vị trí nào?",
+opts:[
+"Đứng phía trên, bên phải và cách đội hình đơn vị một khoảng cách thích hợp.",
+"Đứng phía trên, bên trái và cách đội hình một khoảng cách thích hợp.",
+"Đứng ngang với hàng ghế đầu hướng về phía cờ Tổ quốc."
+],ans:0,
+oldAns:"Đứng phía trên, bên phải và cách đội hình đơn vị một khoảng cách thích hợp."},
+
+{id:56,q:"Chào cờ Tổ quốc ở trong nhà có bàn ghế ngồi, khi nghe dứt khẩu lệnh \"Chào cờ - chào\", những đồng chí nào phải thực hiện động tác chào?",
+opts:[
+"Chủ lễ, trực ban buổi lễ và toàn thể cán bộ, chiến sĩ thực hiện động tác chào.",
+"Đồng chí chủ lễ, trực ban lễ chào cờ, đồng chí đọc 5 lời thề danh dự và cán bộ, chiến sĩ đứng hàng thứ nhất.",
+"Đồng chí chủ lễ và trực ban buổi lễ."
+],ans:0,
+oldAns:"Chủ lễ, trực ban buổi lễ và toàn thể cán bộ, chiến sĩ thực hiện động tác chào."},
+
+{id:57,q:"Trong các trường hợp sau, trường hợp nào cán bộ, chiến sĩ mặc trang phục CAND phải đeo dây chéo?",
+opts:[
+"Khi làm việc tại phòng làm việc tại các đơn vị Cảnh sát giao thông, trại tạm giam, phòng Cảnh sát cơ động, đội Cảnh sát giao thông trật tự Công an các đơn vị, địa phương.",
+"Khi làm nhiệm vụ cứu nạn, cứu hộ có sử dụng trang phục chuyên dùng.",
+"Trực tiếp làm nhiệm vụ giữ gìn trật tự an toàn giao thông, trật tự công cộng; tuần tra, kiểm soát, canh gác, bảo vệ mục tiêu; dẫn giải phạm nhân, trại viên, bị can, bị cáo; mặc trang phục chuyên dùng khi làm nhiệm vụ trong đội danh dự, nhạc lễ, tiêu binh, hộ tống danh dự…"
+],ans:2,
+oldAns:"Trực tiếp làm nhiệm vụ giữ gìn trật tự an toàn giao thông, trật tự công cộng; tuần tra, kiểm soát, canh gác, bảo vệ mục tiêu; dẫn giải phạm nhân, trại viên, bị can, bị cáo; mặc trang phục chuyên dùng khi làm nhiệm vụ trong đội danh dự, nhạc lễ, tiêu binh, hộ tống danh dự…"},
+
+{id:58,q:"Theo điều lệnh nội vụ CAND: Trong trường hợp do yêu cầu công tác, chiến đấu phải cùng nhau thực hiện một nhiệm vụ, lãnh đạo cấp trên chưa chỉ định người chỉ huy thì phải căn cứ vào đâu để chỉ định người chỉ huy?",
+opts:[
+"Căn cứ vào cấp bậc hàm, chức vụ, thâm niên công tác, tuổi đời.",
+"Căn cứ vào chức vụ, cấp bậc hàm, tuổi đời, thâm niên công tác.",
+"Căn cứ vào chức vụ, cấp bậc hàm, thâm niên công tác, tuổi đời."
+],ans:2,
+oldAns:"Căn cứ vào chức vụ, cấp bậc hàm, thâm niên công tác, tuổi đời."},
+
+{id:59,q:"Phạm vi điều chỉnh của Thông tư số 09/2021/TT-BCA ngày 20/01/2021 là gì?",
+opts:[
+"Quy định về Nghi lễ Công an nhân dân",
+"Quy định về Tập huấn và tổ chức hội thi Điều lệnh, quân sự, võ thuật trong Công an nhân dân..",
+"Quy định về Kiểm tra điều lệnh, quân sự, võ thuật Công an nhân dân."
+],ans:2,
+oldAns:"Quy định về Kiểm tra điều lệnh, quân sự, võ thuật Công an nhân dân."},
+
+{id:60,q:"Thông tư 09/2021/TT-BCA ngày 20/01/2021 của Bộ Công an quy định bố trí lực lượng kiểm tra điều lệnh CAND như thế nào?",
+opts:[
+"Việc kiểm tra điều lệnh Công an nhân dân phải thành lập Tổ kiểm tra. Mỗi tổ kiểm tra có từ 05 đến 07 đồng chí, do 01 đồng chí làm tổ trưởng. Trường hợp cần nhiều cán bộ hơn do Thủ trưởng đơn vị quyết định.",
+"Việc kiểm tra điều lệnh Công an nhân dân phải thành lập Tổ kiểm tra. Mỗi tổ kiểm tra có từ 02 đến 04 đồng chí, do 01 đồng chí làm Tổ trưởng. Trường hợp cần nhiều cán bộ hơn do Thủ trưởng đơn vị quyết định.",
+"Việc kiểm tra điều lệnh Công an nhân dân phải thành lập Tổ kiểm tra. Mỗi tổ kiểm tra có từ 02 đến 04 đồng chí. Trường hợp cần nhiều cán bộ hơn do Thủ trưởng đơn vị quyết định."
+],ans:1,
+oldAns:"Việc kiểm tra điều lệnh Công an nhân dân phải thành lập Tổ kiểm tra. Mỗi tổ kiểm tra có từ 02 đến 04 đồng chí, do 01 đồng chí làm Tổ trưởng. Trường hợp cần nhiều cán bộ hơn do Thủ trưởng đơn vị quyết định."},
+
+{id:61,q:"Có bao nhiêu hình thức, biện pháp kiểm tra điều lệnh CAND ; gồm những hình thức, biện pháp nào theo Thông tư số 09/2021/TT-BCA ngày 20/01/2021 của Bộ Công an?",
+opts:[
+"Có 02 hình thức, biện pháp ; gồm : Kiểm tra đột xuất; Kiểm tra bí mật kết hợp với công khai.",
+"Có 03 hình thức, biện pháp ; gồm : Kiểm tra đột xuất; Kiểm tra bí mất kết hợp với công khai; Kiểm tra bí mật.",
+"Có 04 hình thức, biện pháp; gồm : Kiểm tra thường xuyên; Kiểm tra đột xuất; Kiểm tra bí mật kết hợp với công khai; Kiểm tra bí mật."
+],ans:2,
+oldAns:"Có 04 hình thức, biện pháp; gồm : - Kiểm tra thường xuyên. - Kiểm tra đột xuất. - Kiểm tra bí mật kết hợp với công khai. - Kiểm tra bí mật."},
+
+{id:62,q:"Đ/c cho biết việc đeo huân chương, huy chương, kỷ niệm chương, danh hiệu vinh dự Nhà nước ở vị trí nào trên ngực áo cho đúng với quy định của điều lệnh CAND?",
+opts:["Đeo ở ngực áo bên phải.","Đeo ở ngực áo bên trái.","Tuỳ tình huống đeo cho phù hợp."],ans:1,
+oldAns:"Đeo ở ngực áo bên trái."},
+
+{id:63,q:"Đồng chí cho biết cách nhận bằng huân chương, huy chương, bằng khen, giấy khen có khung, cách nào đúng quy định của nghi lễ CAND?",
+opts:[
+"Hai cánh tay trên khép sát sườn, hai cánh tay dưới hơi co lên tạo với cánh tay trên một góc 135 độ, hai bàn tay ngửa nắm cạnh dưới khung, 4 ngón con khép lại bên ngoài, ngón cái ôm choàng cạnh bên của khung bằng.",
+"Hai cánh tay trên khép sát sườn, hai cánh tay dưới hơi co lên tạo với cánh tay trên một góc 150 độ, hai bàn tay ngửa nắm cạnh dưới khung, 4 ngón con khép lại bên ngoài, ngón cái ôm choàng cạnh bên của khung bằng.",
+"Hai cánh tay trên khép sát sườn, hai cánh tay dưới hơi co lên tạo với cánh tay trên một góc 140 độ, hai bàn tay ngửa nắm cạnh dưới khung, 4 ngón con khép lại bên ngoài, ngón cái ôm choàng cạnh bên của khung, mặt trước hướng về phía đơn vị"
+],ans:1,
+oldAns:"Hai cánh tay trên khép sát sườn, hai cánh tay dưới hơi co lên tạo với cánh tay trên một góc 150 độ, hai bàn tay ngửa nắm cạnh dưới khung, 4 ngón con khép lại bên ngoài, ngón cái ôm choàng cạnh bên của khung bằng."},
+
+{id:64,q:"Đồng chí cho biết trách nhiệm của chỉ huy khi chỉ huy đội ngũ?",
+opts:[
+"Giao cho trực ban điều hành, chỉ huy giám sát việc thực hiện.",
+"Trực tiếp chỉ huy đơn vị, vắng mặt phải ủy quyền cho cấp dưới. Kiểm tra quân số, vũ khí, khí tài, trang bị kỹ thuật trước và sau khi học tập, huấn luyện, kiểm tra trang phục và cách mang trang bị của từng người theo quy định.",
+"Cho đơn vị thực hiện từng phần việc, nhận xét kết quả thực hiện trong buổi giao ban đơn vị."
+],ans:1,
+oldAns:"Trực tiếp chỉ huy đơn vị, vắng mặt phải ủy quyền cho cấp dưới. Kiểm tra quân số, vũ khí, khí tài, trang bị kỹ thuật trước và sau khi học tập, huấn luyện, kiểm tra trang phục và cách mang trang bị của từng người theo quy định."},
+
+{id:65,q:"Đồng chí cho biết trách nhiệm của cán bộ, chiến sĩ trong hàng ngũ?",
+opts:[
+"Tuyệt đối phục tùng mệnh lệnh của người chỉ huy. Kiểm tra vũ khí, trang bị được giao nếu phát hiện sai sót phải báo cáo ngay cho người chỉ huy trực tiếp. Chỉnh đốn trang phục, trang bị và giúp đồng đội chỉnh sửa cách mang trang phục, trang bị. Đứng đúng vị trí theo số thứ tự, thực hiện đúng chức trách nhiệm vụ.",
+"Chuẩn bị tài liệu phục vụ học tập.",
+"Giữ đúng tư thế tác phong, tham gia ý kiến với chỉ huy huấn luyện khi cần."
+],ans:0,
+oldAns:"Tuyệt đối phục tùng mệnh lệnh của người chỉ huy. Kiểm tra vũ khí, trang bị được giao nếu phát hiện sai sót phải báo cáo ngay cho người chỉ huy trực tiếp. Chỉnh đốn trang phục, trang bị và giúp đồng đội chỉnh sửa cách mang trang phục, trang bị. Đứng đúng vị trí theo số thứ tự, thực hiện đúng chức trách nhiệm vụ."},
+
+{id:66,q:"Theo quy định về Điều lệnh đội ngũ CAND hiện hành, động tác chào thực hiện như thế nào?",
+opts:[
+"Cánh tay trên nâng lên ngang với thân người, tạo với thân người một góc 85°",
+"Cánh tay trên nâng lên ngang với thân người, tạo với thân người một góc 70°",
+"Cánh tay trên nâng lên ngang với thân người, tạo với thân người một góc 80°."
+],ans:2,
+oldAns:"Cánh tay trên nâng lên ngang với thân người, tạo với thân người một góc 80°."},
+
+{id:67,q:"Đồng chí cho biết giãn cách giữa hai cán bộ, chiến sĩ đứng cạnh nhau trên 1 hàng ngang là bao nhiêu?",
+opts:["70 cen-ti-mét.","75 cen-ti-mét.","80 cen-ti-mét."],ans:0,
+oldAns:"70 cen-ti-mét."},
+
+{id:68,q:"Đồng chí cho biết cự ly giữa hai cán bộ, chiến sĩ đứng liền trước sau nhau là bao nhiêu?",
+opts:["75 cen-ti-mét","85 cen-ti-mét","100 cen-ti-mét."],ans:2,
+oldAns:"100 cen-ti-mét."},
+
+{id:69,q:"Đồng chí cho biết độ dài bước tiến, bước lùi là bao nhiêu?",
+opts:["70 cen-ti-mét.","75 cen-ti-mét.","85 cen-ti-mét"],ans:1,
+oldAns:"75 cen-ti-mét."},
+
+{id:70,q:"Đồng chí cho biết độ dài bước đi đều, đi nghiêm là bao nhiêu?",
+opts:["70 cen-ti-mét.","75 cen-ti-mét.","85 cen-ti-mét"],ans:1,
+oldAns:"75 cen-ti-mét."},
+
+{id:71,q:"Đồng chí cho biết độ dài bước chạy là bao nhiêu ?",
+opts:["70 cen-ti-mét.","75 cen-ti-mét.","85 cen-ti-mét."],ans:2,
+oldAns:"85 cen-ti-mét."},
+
+{id:72,q:"Điều lệnh đội ngũ CAND quy định độ dài bước qua phải, qua trái là bao nhiêu?",
+opts:["70 cen-ti-mét.","35 cen-ti-mét.","Rộng bằng vai."],ans:1,
+oldAns:"35 cen-ti-mét."},
+
+{id:73,q:"Đồng chí cho biết tốc độ đi đều, đi nghiêm là bao nhiêu?",
+opts:["100 bước / 1 phút.","106 bước / 1 phút.","110 bước / 1 phút."],ans:1,
+oldAns:"106 bước / 1 phút."},
+
+{id:74,q:"Đồng chí cho biết tốc độ chạy là bao nhiêu ?",
+opts:["160 bước/phút.","170 bước/phút.","180 bước/phút."],ans:1,
+oldAns:"170 bước/phút."},
+
+{id:75,q:"Vị trí đôn đốc và truyền đạt mệnh lệnh đối với đội hình tiểu đội hàng ngang cách đội hình đơn vị mấy bước?",
+opts:["Từ 3 đến 5 bước.","Từ 5 đến 8 bước.","Từ 8 đến 10 bước."],ans:0,
+oldAns:"Từ 3 đến 5 bước."},
+
+{id:76,q:"Đồng chí cho biết khi chỉnh hàng dọc đội hình tiểu đội, người chỉ huy đứng ở vị trí nào?",
+opts:[
+"Phía trước bên phải đội hình chếch 45 độ.",
+"Phía chính giữa đội hình, cách đội hình từ 2 đến 3 bước.",
+"Phía trước bên trái đội hình chếch 45 độ."
+],ans:1,
+oldAns:"Phía chính giữa đội hình, cách đội hình từ 2 đến 3 bước."},
+
+{id:77,q:"CBCS khi di chuyển trên 5 bước thì phải thực hiện động tác di chuyển nào?",
+opts:["Đi thường theo số bước quy định.","Đi nghiêm.","Đi đều hoặc chạy đều."],ans:2,
+oldAns:"Đi đều hoặc chạy đều."},
+
+{id:78,q:"Vị trí đôn đốc và truyền đạt mệnh lệnh đối với đội hình trung đội hàng ngang cách đội hình đơn vị mấy bước?",
+opts:["Từ 3 đến 5 bước.","Từ 5 đến 8 bước.","Từ 8 đến 10 bước."],ans:1,
+oldAns:"Từ 5 đến 8 bước."},
+
+{id:79,q:"Đối với CBCS vi phạm điều lệnh bị xử lý bằng hình thức Không xét tặng danh hiệu thi đua năm đến xếp loại Không hoàn thành nhiện vụ năm thì Thủ trưởng đơn vị, lãnh đạo, chỉ huy phụ trách trực tiếp bị xử lý bằng hình thức gì?",
+opts:[
+"Phê bình.",
+"Hạ một bậc danh hiệu thi đua năm.",
+"Không xét tặng danh hiệu thi đua năm."
+],ans:1,
+oldAns:"Hạ một bậc danh hiệu thi đua năm."},
+
+{id:80,q:"Nguyên tắc xử lý vi phạm điều lệnh CAND nào sau đây là đúng?",
+opts:[
+"Mỗi hành vi vi phạm chỉ xử lý một lần. Trong cùng một vụ việc có nhiều cán bộ chiến sĩ vi phạm thì mỗi cán bộ, chiến sĩ đều bị xử lý về hành vi vi phạm của mình.",
+"Mỗi hành vi vi phạm chỉ xử lý một lần. Trong cùng một vụ việc có nhiều cán bộ, chiến sĩ vi phạm thì xử lý chung tất cả cán bộ, chiến sĩ vi phạm bằng một hình thức xử lý.",
+"Mỗi hành vi vi phạm chỉ xử lý một lần. Trong cùng một vụ việc có nhiều cán bộ, chiến sĩ vi phạm thì xử lý tập thể đó."
+],ans:0,
+oldAns:"Mỗi hành vi vi phạm chỉ xử lý một lần. Trong cùng một vụ việc có nhiều cán bộ chiến sĩ vi phạm thì mỗi cán bộ, chiến sĩ đều bị xử lý về hành vi vi phạm của mình."},
+
+{id:81,q:"Quy định về xử lý trách nhiệm liên đới nào sau đây là đúng?",
+opts:[
+"Đơn vị vi phạm bị xử lý bằng hình thức hạ một bậc danh hiệu thi đua năm, thủ trưởng đơn vị bị xử lý bằng hình thức phê bình.",
+"Đơn vị vi phạm bị xử lý bằng hình thức hạ một bậc danh hiệu thi đua năm, thủ trưởng đơn vị bị xử lý bằng hình thức hạ một bậc thi đua năm.",
+"Đơn vị vi phạm bị xử lý bằng hình thức hạ một bặc danh hiệu thi đua năm, thủ trưởng đơn vị bị xử lý bằng hình thức hạ hai bậc thi đua năm."
+],ans:0,
+oldAns:"Đơn vị vi phạm bị xử lý bằng hình thức hạ một bậc danh hiệu thi đua năm, thủ trưởng đơn vị bị xử lý bằng hình thức phê bình."},
+
+{id:82,q:"Cán bộ, chiến sĩ vi phạm điều lệnh CAND bị xử lý bằng hình thức hạ hai bậc danh hiệu thi đua năm đến hạ hai bậc xếp loại cán bộ trong năm thì xử lý trách nhiệm liên đới của lãnh đạo, chỉ huy trực tiếp quản lý cán bộ tại thời điểm cán bộ, chiến sĩ vi phạm nào sau đây là đúng quy định?",
+opts:[
+"Lãnh đạo, chỉ huy trực tiếp quản lý cán bộ tại thời điểm cán bộ, chiến sĩ vi phạm bị xử lý bằng hình thức phê bình.",
+"Lãnh đạo, chỉ huy trực tiếp quản lý cán bộ tại thời điểm cán bộ, chiến sĩ vi phạm bị xử lý bằng hình thức hạ một bậc danh hiệu thi đua năm.",
+"Lãnh đạo, chỉ huy trực tiếp quản lý cán bộ tại thời điểm cán bộ, chiến sĩ vi phạm bị xử lý bằng hình thức hạ một bậc xếp loại cán bộ trong năm."
+],ans:1,
+oldAns:"Lãnh đạo, chỉ huy trực tiếp quản lý cán bộ tại thời điểm cán bộ, chiến sĩ vi phạm bị xử lý bằng hình thức hạ một bậc danh hiệu thi đua năm."},
+
+{id:83,q:"Trường hợp nào sau đây cán bộ, chiến sĩ vi phạm điều lệnh bị xử lý kỷ luật mà thủ trưởng đơn vị, lãnh đạo, chỉ huy phụ trách trực tiếp cán bộ, chiến sĩ không bị xử lý trách nhiệm liên đới.",
+opts:[
+"Cán bộ, chiến sĩ vi phạm điều lệnh mà trước đó thủ trưởng đơn vị, lãnh đạo, chỉ huy phụ trách trực tiếp đã nhắc nhở, chấn chỉnh bằng văn bản.",
+"Cán bộ, chiến sĩ vi phạm điều lệnh mà trước đó thủ trưởng đơn vị, lãnh đạo, chỉ huy phụ trách trực tiếp đã nhắc nhở, chấn chỉnh trong cuộc họp, giao ban của đơn vị (nội dung chấn chỉnh, nhắc nhở được ghi trong biên bản họp, giao ban của đơn vị).",
+"Cả 02 trường hợp trên."
+],ans:2,
+oldAns:"Cán bộ, chiến sĩ vi phạm điều lệnh mà trước đó thủ trưởng đơn vị, lãnh đạo, chỉ huy phụ trách trực tiếp đã nhắc nhở, chấn chỉnh bằng văn bản. Cán bộ, chiến sĩ vi phạm điều lệnh mà trước đó thủ trưởng đơn vị, lãnh đạo, chỉ huy phụ trách trực tiếp đã nhắc nhở, chấn chỉnh trong cuộc họp, giao ban của đơn vị (nội dung chấn chỉnh, nhắc nhở được ghi trong biên bản họp, giao ban của đơn vị)."},
+
+{id:84,q:"Cán bộ, chiến sĩ không tham gia chào cờ Tổ quốc theo quy định bị áp dụng hình thức xử lý nào là đúng quy định?",
+opts:["Phê bình","Hạ một bậc danh hiệu thi đua năm.","Hạ một bậc xếp loại cán bộ trong năm."],ans:1,
+oldAns:"Hạ một bậc danh hiệu thi đua năm."},
+
+{id:85,q:"Cán bộ, chiến sĩ tham gia tập huấn điều lệnh, quân sự, võ thuật Công an nhân dân trong năm mà kết quả không đạt yêu cầu bị xử lý như thế nào là đúng quy định?",
+opts:[
+"Hạ một bậc danh hiệu thi đua năm.",
+"Hạ hai bậc danh hiệu thi đua năm.",
+"Hạ một bậc xếp loại cán bộ trong năm."
+],ans:0,
+oldAns:"Hạ một bậc danh hiệu thi đua năm."},
+
+{id:86,q:"Cán bộ, chiến sĩ vi phạm: Làm việc không có chương trình, kế hoạch; không xây dựng chương trình, kế hoạch công tác tuần bị áp dụng hình thức xử lý nào là đúng quy định?",
+opts:[
+"Hạ một bậc danh hiệu thi đua năm.",
+"Hạ hai bậc danh hiệu thi đua năm.",
+"Hạ một bậc xếp loại cán bộ trong năm."
+],ans:2,
+oldAns:"Hạ một bậc xếp loại cán bộ trong năm."},
+
+{id:87,q:"Cán bộ, chiến sĩ vi phạm quy định nào sau đây, bị áp dụng hình thức xử lý hạ hai bậc xếp loại cán bộ trong năm.",
+opts:[
+"Gây mất đoàn kết nội bộ, ảnh hưởng đến việc thực hiện nhiệm vụ chính trị và uy tín của lực lượng Công an nhân dân.",
+"Bao che, không xử lý vi phạm điều lệnh hoặc áp dụng các hình thức xử lý vi phạm không đúng quy định, kéo dài thời hạn hoặc trì hoãn việc xử lý vi phạm điều lệnh.",
+"Cả hai đáp án trên."
+],ans:2,
+oldAns:"Gây mất đoàn kết nội bộ, ảnh hưởng đến việc thực hiện nhiệm vụ chính trị và uy tín của lực lượng Công an nhân dân. Bao che, không xử lý vi phạm điều lệnh hoặc áp dụng các hình thức xử lý vi phạm không đúng quy định, kéo dài thời hạn hoặc trì hoãn việc xử lý vi phạm điều lệnh."},
+
+{id:88,q:"Cán bộ, chiến sĩ vi phạm các quy định về trật tự an toàn giao thông bị xử lý như thế nào theo quy định hiện hành?",
+opts:[
+"Hạ một bậc danh hiệu thi đua năm.",
+"Hạ hai bậc danh hiệu thi đua năm.",
+"Hạ một bậc xếp loại cán bộ trong năm."
+],ans:1,
+oldAns:"Hạ hai bậc danh hiệu thi đua năm."},
+
+{id:89,q:"Cán bộ, chiến sĩ giao phương tiện, thiết bị kỹ thuật nghiệp vụ phục vụ công tác cho người không có đủ thẩm quyền và điều kiện sử dụng bị xử lý như thế nào theo quy định hiện hành?",
+opts:["Phê bình.","Khiển trách.","Cảnh cáo."],ans:1,
+oldAns:"Khiển trách."},
+
+{id:90,q:"Cán bộ, chiến sĩ có 02 năm liên tiếp không hoàn thành cùng một nội dung thực hành điều lệnh, quân sự, võ thuật thì bị xử lý như thế nào theo quy định hiện hành?",
+opts:[
+"Xem xét hạ một bậc danh hiệu thi đua vào năm thứ 2 không đạt yêu cầu.",
+"Xem xét hạ một bậc xếp loại cán bộ vào năm thứ 2 không đạt yêu cầu.",
+"Xem xét hạ hai bậc danh hiệu thi đua vào năm thứ 2 không đạt yêu cầu."
+],ans:0,
+oldAns:"Xem xét hạ một bậc danh hiệu thi đua vào năm thứ 2 không đạt yêu cầu."},
+
+{id:91,q:"Cán bộ, chiến sĩ đi học tập trung, vừa làm vừa học tại các trường trong Công an nhân dân, không tham gia tập huấn tại đơn vị mà không có xác nhận kết quả tập huấn điều lệnh, quân sự, võ thuật trong năm gửi về đơn vị cử đi học thì bị xử lý như thế nào theo quy định hiện hành?",
+opts:[
+"Bỏ tập huấn không có lý do, xếp loại không hoàn thành nhiệm vụ trong năm.",
+"Bỏ tập huấn không có lý do, xử lý kỷ luật khiển trách.",
+"Bỏ tập huấn không có lý do, xử lý kỷ luật cảnh cáo."
+],ans:1,
+oldAns:"Bỏ tập huấn không có lý do, xử lý kỷ luật khiển trách."},
+
+{id:92,q:"Trong ngày làm việc, giờ trực, giờ nghỉ trưa của ngày làm việc, ngày trực lãnh đạo, chỉ huy Công an từ cấp đội, cấp xã, cấp đại đội trực thuộc trở lên mà trong máu hoặc hơi thở có nồng độ cồn thì xử lý bằng hình thức nào theo quy định hiện hành?",
+opts:["Khiển trách.","Không xét tặng danh hiệu thi đua năm.","Cảnh cáo."],ans:2,
+oldAns:"Cảnh cáo."},
+
+{id:93,q:"Đơn vị có tổng số lượt cán bộ, chiến sĩ vi phạm điều lệnh trong năm có từ 5% đến dưới 10% thì bị xử lý bằng hình thức nào theo quy định hiện hành?",
+opts:[
+"Phê bình.",
+"Hạ một bậc danh hiệu thi đua năm.",
+"Hạ hai bậc danh hiệu thi đua năm."
+],ans:1,
+oldAns:"Hạ một bậc danh hiệu thi đua năm."},
+
+{id:94,q:"Đơn vị vi phạm việc thực hiện không đúng quy định của Bộ trưởng Bộ Công an về nội vụ, vệ sinh trụ sở cơ quan, doanh trại; nơi ăn, ngủ, nghỉ của cán bộ, chiến sĩ; nơi sinh hoạt văn hoá, các trung tâm, cơ sở tập luyện, thi đấu điều lệnh, quân sự, võ thuật, thể dục, thể thao; nơi tiếp khách; nơi tiếp nhận, giải quyết thủ tục hành chính; công tác phòng, chống cháy nổ, thiên tai, dịch bệnh và bảo vệ môi trường bị áp dụng hình thức xử lý nào là đúng quy định?",
+opts:[
+"Phê bình.",
+"Hạ một bậc danh hiệu thi đua năm.",
+"Hạ một bậc xếp loại đơn vị trong năm."
+],ans:0,
+oldAns:"Phê bình."},
+
+{id:95,q:"Đơn vị vi phạm trong giờ làm việc, giờ trực, ngày trực tại đơn vị có từ 5% cán bộ, chiến sĩ trở lên không mặc trang phục Công an nhân dân hoặc mặc trang phục không đúng quy định của Bộ trưởng Bộ Công an trừ trường hợp Bộ có quy định khác; lập bàn thờ, để bát hương, thắp hương không đúng quy định trong phạm vi trụ sở đơn vị, trừ khi tổ chức lễ tang, lập bàn thờ Chủ tịch Hồ Chí Minh, thắp hương trong các ngày nghỉ Tết Nguyên đán theo quy định của Nhà nước, bị áp dụng hình thức xử lý nào là đúng quy định.",
+opts:[
+"Phê bình.",
+"Hạ một bậc danh hiệu thi đua năm.",
+"Hạ hai bậc danh hiệu thi đua năm."
+],ans:1,
+oldAns:"Hạ một bậc danh hiệu thi đua năm."},
+
+{id:96,q:"Đơn vị quán triệt không đầy đủ, kịp thời các văn bản chỉ đạo của cấp trên về công tác điều lệnh, quân sự, võ thuật thì bị xử lý bằng hình thức nào thoe quy định hiện hành?",
+opts:[
+"Hạ một bậc danh hiệu thi đua năm.",
+"Hạ hai bậc danh hiệu thi đua năm.",
+"Hạ một bậc xếp loại đơn vị trong năm."
+],ans:2,
+oldAns:"Hạ một bậc xếp loại đơn vị trong năm."},
+
+{id:97,q:"Đơn vị không phổ biến, không tổ chức thực hiện chỉ thị, mệnh lệnh, kế hoạch, quyết định, quy trình, quy chế, quy định của cấp trên; bao che, xử lý không đúng quy định hoặc không xử lý vi phạm điều lệnh thì bị xử lý bằng hình thức nào theo quy định hiện hành?",
+opts:[
+"Hạ hai bậc xếp loại đơn vị trong năm",
+"Hạ một bậc xếp loại đơn vị trong năm.",
+"Hạ hai bậc danh hiệu thi đua năm."
+],ans:0,
+oldAns:"Hạ hai bậc xếp loại đơn vị trong năm."},
+
+{id:98,q:"Không tổ chức tập huấn điều lệnh, quân sự, võ thuật trong năm thì Đơn vị, cấp trưởng và cấp phó trực tiếp phụ trách công tác điều lệnh, quân sự, võ thuật bị xử lý như thế nào theo quy định hiện hành?",
+opts:[
+"Đơn vị xem xét hạ một bậc thi đua trong năm, cấp trưởng và cấp phó trực tiếp phụ trách xem xét hạ một bậc thi đua trong năm.",
+"Đơn vị bị xếp loại không hoàn thành nhiệm vụ, cấp trưởng và cấp phó trực tiếp phụ trách xem xét hạ một bậc thi đua trong năm.",
+"Đơn vị bị xếp loại không hoàn thành nhiệm vụ, cấp trưởng và cấp phó trực tiếp phụ trách xem xét hạ hai bậc thi đua trong năm."
+],ans:2,
+oldAns:"Đơn vị bị xếp loại không hoàn thành nhiệm vụ, cấp trưởng và cấp phó trực tiếp phụ trách xem xét hạ hai bậc thi đua trong năm."},
+
+{id:99,q:"Đơn vị có tổng số lượt cán bộ, chiến sĩ vi phạm điều lệnh trong năm có tỉ lệ từ 15% đến dưới 20% so với biên chế của đơn vị, bị xử lý hình thức nào theo quy định hiện hành?",
+opts:[
+"Hạ một bậc danh hiệu thi đua năm.",
+"Hạ hai bậc danh hiệu thi đua năm.",
+"Hạ một bậc xếp loại đơn vị trong năm."
+],ans:2,
+oldAns:"Hạ một bậc xếp loại đơn vị trong năm."},
+
+{id:100,q:"Thời gian xử lý vi phạm điều lệnh CAND (trường hợp thông thường) là bao nhiêu ngày (ngày làm việc), kể từ khi nhận được thông báo kết quả kiểm tra điều lệnh?",
+opts:["15 ngày.","20 ngày.","30 ngày."],ans:1,
+oldAns:"20 ngày."}
+];
+
+// ÂM THANH PHẢN HỒI (Web Audio API - không cần file âm thanh ngoài)
+const audioCtx = (window.AudioContext || window.webkitAudioContext) ? new (window.AudioContext || window.webkitAudioContext)() : null;
+function playSound(type) {
+  if (!audioCtx) return;
+  try {
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    
+    if (type === 'correct') {
+      osc.frequency.setValueAtTime(587.33, audioCtx.currentTime); // D5
+      osc.frequency.setValueAtTime(880, audioCtx.currentTime + 0.1); // A5
+      gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.35);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.35);
+    } else {
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(220, audioCtx.currentTime);
+      osc.frequency.setValueAtTime(146.83, audioCtx.currentTime + 0.12);
+      gain.gain.setValueAtTime(0.18, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+      osc.start();
+      osc.stop(audioCtx.currentTime + 0.3);
+    }
+  } catch(e) {}
+}
+
+// QUẢN LÝ TRẠNG THÁI TIẾN ĐỘ
+const STORAGE_KEY = 'cand_quiz_2026_db_v3';
+let userState = loadState();
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw);
+  } catch(e) {}
+  return { history: {}, stars: [], totalAnswered: 0, totalCorrect: 0, totalWrong: 0 };
+}
+
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(userState)); } catch(e) {}
+  updateOverviewUI();
+}
+
+function resetAllProgress() {
+  if (confirm("Đồng chí có chắc chắn muốn xóa toàn bộ lịch sử và làm lại từ đầu?")) {
+    userState = { history: {}, stars: [], totalAnswered: 0, totalCorrect: 0, totalWrong: 0 };
+    saveState();
+    alert("Đã làm mới dữ liệu ôn tập!");
+  }
+}
+
+// QUIZ RUNTIME
+let activeQuestions = [];
+let currentIndex = 0;
+let answeredCurrent = false;
+let sessionCorrect = 0;
+let sessionWrong = 0;
+let timerId = null;
+let timerSec = 0;
+
+function switchTab(tabId) {
+  ['tab-home', 'tab-quiz', 'tab-bank', 'tab-share'].forEach(id => {
+    document.getElementById(id).classList.toggle('hidden', id !== tabId);
+  });
+  document.querySelectorAll('.nav-item').forEach((item, idx) => {
+    const tabs = ['tab-home', 'tab-quiz', 'tab-bank', 'tab-share'];
+    item.classList.toggle('active', tabs[idx] === tabId);
+  });
+  if (tabId === 'tab-bank') renderBankList();
+}
+
+function startLearning(fromId, toId) {
+  activeQuestions = dataset.filter(q => q.id >= fromId && q.id <= toId);
+  initQuizSession();
+}
+
+function startWrongQuiz() {
+  const wrongIds = Object.keys(userState.history).filter(id => userState.history[id].lastWrong);
+  if (wrongIds.length === 0) {
+    alert("Hiện tại không có câu nào làm sai! Đồng chí hãy luyện tập thêm các câu hỏi khác nhé.");
+    return;
+  }
+  activeQuestions = dataset.filter(q => wrongIds.includes(String(q.id)));
+  initQuizSession();
+}
+
+function startStarQuiz() {
+  if (userState.stars.length === 0) {
+    alert("Đồng chí chưa đánh dấu ⭐ câu nào! Hãy bấm ngôi sao ở góc câu hỏi khi làm bài để lưu lại.");
+    return;
+  }
+  activeQuestions = dataset.filter(q => userState.stars.includes(q.id));
+  initQuizSession();
+}
+
+function startExam(count) {
+  let pool = [...dataset];
+  shuffle(pool);
+  activeQuestions = pool.slice(0, count);
+  initQuizSession();
+}
+
+function initQuizSession() {
+  currentIndex = 0;
+  sessionCorrect = 0;
+  sessionWrong = 0;
+  timerSec = 0;
+  clearInterval(timerId);
+
+  timerId = setInterval(() => {
+    timerSec++;
+    const m = String(Math.floor(timerSec / 60)).padStart(2, '0');
+    const s = String(timerSec % 60).padStart(2, '0');
+    document.getElementById('q-timer-clock').textContent = `⏱️ ${m}:${s}`;
+  }, 1000);
+
+  document.getElementById('quiz-result-box').classList.add('hidden');
+  document.getElementById('quiz-box').classList.remove('hidden');
+  switchTab('tab-quiz');
+  displayQuestion();
+}
+
+function displayQuestion() {
+  if (currentIndex >= activeQuestions.length) {
+    completeQuiz();
+    return;
+  }
+
+  answeredCurrent = false;
+  const q = activeQuestions[currentIndex];
+  const total = activeQuestions.length;
+
+  document.getElementById('q-counter').textContent = `Câu ${currentIndex + 1}/${total} (Bộ đề: #${q.id})`;
+  document.getElementById('quiz-prog-bar').style.width = `${(currentIndex / total) * 100}%`;
+  document.getElementById('q-title-text').textContent = `Câu ${q.id}. ${q.q}`;
+
+  // Star status
+  const isStar = userState.stars.includes(q.id);
+  const starBtn = document.getElementById('q-star-toggle');
+  starBtn.classList.toggle('active', isStar);
+
+  // Render 3 choices A, B, C
+  const container = document.getElementById('q-choices-container');
+  container.innerHTML = '';
+  const tags = ['A', 'B', 'C'];
+  
+  q.opts.forEach((text, i) => {
+    const btn = document.createElement('div');
+    btn.className = 'choice-btn';
+    btn.innerHTML = `<span class="choice-tag">${tags[i]}</span><span style="flex:1">${text}</span>`;
+    btn.onclick = () => chooseAnswer(btn, i, q);
+    container.appendChild(btn);
+  });
+
+  // Reset explanation
+  const expBox = document.getElementById('q-explanation-box');
+  expBox.className = 'ans-detail-box';
+  expBox.innerHTML = '';
+
+  document.getElementById('q-mini-stats').textContent = `Đúng: ${sessionCorrect} | Sai: ${sessionWrong}`;
+  document.getElementById('btn-q-prev').disabled = (currentIndex === 0);
+  document.getElementById('btn-q-next').textContent = (currentIndex === total - 1) ? 'Nộp bài 🏁' : 'Câu tiếp →';
+}
+
+function chooseAnswer(selectedEl, chosenIdx, q) {
+  if (answeredCurrent) return;
+  answeredCurrent = true;
+
+  const isCorrect = (chosenIdx === q.ans);
+  const allBtns = document.querySelectorAll('.choice-btn');
+  const tags = ['A', 'B', 'C'];
+
+  allBtns.forEach((btn, idx) => {
+    btn.classList.add('locked');
+    if (idx === q.ans) btn.classList.add('correct');
+  });
+
+  if (!isCorrect) {
+    selectedEl.classList.add('wrong');
+    sessionWrong++;
+    userState.totalWrong++;
+    playSound('wrong');
+  } else {
+    sessionCorrect++;
+    userState.totalCorrect++;
+    playSound('correct');
+  }
+  userState.totalAnswered++;
+
+  // Record into state history
+  if (!userState.history[q.id]) userState.history[q.id] = { correct: 0, wrong: 0, lastWrong: false };
+  if (isCorrect) {
+    userState.history[q.id].correct++;
+    userState.history[q.id].lastWrong = false;
+  } else {
+    userState.history[q.id].wrong++;
+    userState.history[q.id].lastWrong = true;
+  }
+  saveState();
+
+  // Hiển thị đáp án đúng + Toàn văn đáp án gốc chuẩn
+  const expBox = document.getElementById('q-explanation-box');
+  if (isCorrect) {
+    expBox.className = 'ans-detail-box show-correct';
+    expBox.innerHTML = `
+      <div style="font-weight:800;margin-bottom:6px">✅ CHÍNH XÁC! (Lựa chọn ${tags[q.ans]})</div>
+      <div style="font-size:0.83rem;color:#2e7d32"><strong>Đáp án gốc chuẩn:</strong> ${q.oldAns}</div>
+    `;
+  } else {
+    expBox.className = 'ans-detail-box show-wrong';
+    expBox.innerHTML = `
+      <div style="font-weight:800;margin-bottom:6px">❌ CHƯA CHÍNH XÁC! Đáp án đúng là: ${tags[q.ans]}</div>
+      <div style="font-size:0.83rem;color:#b71c1c"><strong>Toàn văn đáp án chuẩn:</strong><br>${q.oldAns}</div>
+    `;
+  }
+
+  document.getElementById('q-mini-stats').textContent = `Đúng: ${sessionCorrect} | Sai: ${sessionWrong}`;
+}
+
+function goNextQuestion() {
+  if (currentIndex < activeQuestions.length - 1) {
+    currentIndex++;
+    displayQuestion();
+  } else {
+    completeQuiz();
+  }
+}
+
+function goPrevQuestion() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    displayQuestion();
+  }
+}
+
+function toggleStarCurrent() {
+  const q = activeQuestions[currentIndex];
+  if (!q) return;
+  const idx = userState.stars.indexOf(q.id);
+  if (idx >= 0) userState.stars.splice(idx, 1);
+  else userState.stars.push(q.id);
+  saveState();
+  document.getElementById('q-star-toggle').classList.toggle('active', userState.stars.includes(q.id));
+}
+
+function completeQuiz() {
+  clearInterval(timerId);
+  document.getElementById('quiz-box').classList.add('hidden');
+  const resBox = document.getElementById('quiz-result-box');
+  resBox.classList.remove('hidden');
+
+  const total = activeQuestions.length;
+  const pct = total > 0 ? Math.round((sessionCorrect / total) * 100) : 0;
+  const m = String(Math.floor(timerSec / 60)).padStart(2, '0');
+  const s = String(timerSec % 60).padStart(2, '0');
+
+  document.getElementById('res-score').textContent = `${sessionCorrect} / ${total}`;
+  document.getElementById('res-pct').textContent = `${pct}%`;
+  document.getElementById('res-duration').textContent = `${m}:${s}`;
+
+  let title = "Hoàn thành bài ôn!", icon = "🎉", desc = "";
+  if (pct >= 90) {
+    icon = "🏆"; title = "Xuất sắc! Nắm vững kiến thức"; desc = "Đồng chí đã trả lời đúng hầu hết câu hỏi điều lệnh CAND!";
+  } else if (pct >= 75) {
+    icon = "👏"; title = "Khá tốt!"; desc = "Đạt yêu cầu bài thi. Tiếp tục ôn thêm các câu còn phân vân.";
+  } else if (pct >= 50) {
+    icon = "💪"; title = "Cần cố gắng thêm!"; desc = "Hãy sử dụng tính năng 'Ôn các câu làm sai' để khắc phục các lỗi.";
+  } else {
+    icon = "📚"; title = "Cần ôn tập kỹ hơn!"; desc = "Đồng chí nên chia nhỏ thành 2 ngày (Ngày 1: 1-50, Ngày 2: 51-100) để ghi nhớ bền vững.";
+  }
+
+  document.getElementById('res-icon').textContent = icon;
+  document.getElementById('res-title').textContent = title;
+  document.getElementById('res-desc').textContent = desc;
+}
+
+function restartQuiz() {
+  initQuizSession();
+}
+
+// BANK LIST
+let currentBankFilter = 'all';
+function renderBankList() {
+  const list = document.getElementById('bank-items-container');
+  const term = document.getElementById('bank-search').value.toLowerCase().trim();
+  const tags = ['A', 'B', 'C'];
+
+  let filtered = dataset.filter(q => {
+    if (currentBankFilter === 'd1' && q.id > 50) return false;
+    if (currentBankFilter === 'd2' && q.id <= 50) return false;
+    if (currentBankFilter === 'star' && !userState.stars.includes(q.id)) return false;
+    if (currentBankFilter === 'wrong' && (!userState.history[q.id] || !userState.history[q.id].lastWrong)) return false;
+
+    if (term) {
+      const matchQ = q.q.toLowerCase().includes(term);
+      const matchOpts = q.opts.some(o => o.toLowerCase().includes(term));
+      const matchOld = q.oldAns.toLowerCase().includes(term);
+      return matchQ || matchOpts || matchOld;
+    }
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    list.innerHTML = '<div style="text-align:center;padding:24px;color:#888">Không tìm thấy câu hỏi phù hợp.</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(q => {
+    const isStar = userState.stars.includes(q.id);
+    return `
+      <div class="bank-item" onclick="openSingleQuestion(${q.id})">
+        <div class="bank-item-title">
+          <span>Câu ${q.id}. ${q.q}</span>
+          <span>${isStar ? '⭐' : ''}</span>
+        </div>
+        <div style="font-size:0.8rem;color:#555;margin-bottom:6px">
+          <strong>Lựa chọn đúng:</strong> [${tags[q.ans]}] ${q.opts[q.ans]}
+        </div>
+        <div class="bank-item-old-ans">
+          <strong>📜 Đáp án chuẩn:</strong> ${q.oldAns}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function openSingleQuestion(id) {
+  const item = dataset.find(q => q.id === id);
+  if (!item) return;
+  activeQuestions = [item];
+  initQuizSession();
+}
+
+function setBankFilter(filter, btn) {
+  currentBankFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderBankList();
+}
+
+// OVERVIEW UI
+function updateOverviewUI() {
+  const answeredCount = Object.keys(userState.history).length;
+  const total = dataset.length;
+  const pct = Math.round((answeredCount / total) * 100);
+
+  document.getElementById('home-prog-bar').style.width = `${pct}%`;
+  document.getElementById('txt-home-prog').textContent = `Đã ôn luyện: ${answeredCount}/${total} câu (${pct}%)`;
+
+  const totalAnswered = userState.totalCorrect + userState.totalWrong;
+  const acc = totalAnswered > 0 ? Math.round((userState.totalCorrect / totalAnswered) * 100) : 0;
+  document.getElementById('txt-home-acc').textContent = `Tỉ lệ đúng: ${acc}%`;
+
+  document.getElementById('val-total').textContent = userState.totalAnswered;
+  document.getElementById('val-correct').textContent = userState.totalCorrect;
+  document.getElementById('val-wrong').textContent = userState.totalWrong;
+
+  // Mastered
+  let mastered = 0;
+  Object.keys(userState.history).forEach(id => {
+    const h = userState.history[id];
+    if (h.correct >= 2 && !h.lastWrong) mastered++;
+  });
+  document.getElementById('val-mastered').textContent = mastered;
+
+  // Counts for wrong & star
+  const wrongCount = Object.values(userState.history).filter(h => h.lastWrong).length;
+  document.getElementById('txt-wrong-count').textContent = `${wrongCount} câu cần khắc phục`;
+  document.getElementById('txt-star-count').textContent = `${userState.stars.length} câu đã đánh dấu sao`;
+}
+
+function copyShareText() {
+  const text = `📋 BỘ ĐỀ 100 CÂU HỎI TRẮC NGHIỆM ĐIỀU LỆNH, QUÂN SỰ, VÕ THUẬT CAND 2026\nĐã có ứng dụng ôn thi trắc nghiệm trên điện thoại và máy tính, gồm trọn bộ 100 câu hỏi chính thức (các lựa chọn A-B-C chuẩn xác và đối chiếu đáp án gốc chuẩn Bộ Công an).\n👉 Đồng chí mở file đính kèm "quiz_dieulenh.html" trên trình duyệt là ôn tập được ngay!`;
+  navigator.clipboard.writeText(text).then(() => {
+    document.getElementById('share-copy-noti').textContent = '✅ Đã sao chép nội dung lời nhắn chia sẻ!';
+    setTimeout(() => { document.getElementById('share-copy-noti').textContent = ''; }, 3000);
+  }).catch(() => {
+    alert("Nội dung chia sẻ:\n\n" + text);
+  });
+}
+
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+// KHỞI ĐỘNG
+updateOverviewUI();
+</script>
+</body>
+</html>
