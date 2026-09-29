@@ -1,0 +1,20 @@
+The following changes were made by the replace_file_content tool to: C:\Users\Acer\.gemini\antigravity\brain\04883a7b-f14e-427c-a92d-cdc41dece94d\quiz_dieulenh.html. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -298,11 +298,11 @@
+             <p id="txt-star-count">0 câu đã đánh dấu sao</p>
+           </div>
+         </div>
+-        <div class="mode-box" onclick="startExam(20)">
++        <div class="mode-box" onclick="startExam(10)">
+           <span class="mode-icon">⚡</span>
+           <div class="mode-txt">
+-            <h4>Luyện nhanh 20 câu</h4>
+-            <p>Trộn ngẫu nhiên câu hỏi</p>
++            <h4>Thi ngẫu nhiên 10 câu</h4>
++            <p>Trộn ngẫu nhiên 10 câu hỏi</p>
+           </div>
+         </div>
+         <div class="mode-box" onclick="startExam(100)">
+[diff_block_end]
+
+Please note that the above snippet only shows the MODIFIED lines from the last change. It shows up to 3 lines of unchanged lines before and after the modified lines. The actual file contents may have many more lines not shown.

@@ -1,0 +1,5 @@
+{
+  "summary": "Ứng dụng ôn tập trắc nghiệm 100 câu Điều lệnh, Quân sự, Võ thuật CAND 2026 được làm lại hoàn chỉnh:\n- Sử dụng các lựa chọn A, B, C theo đúng bộ đề trắc nghiệm bạn vừa gửi.\n- Đối chiếu và hiển thị đáp án chuẩn theo đúng bộ đáp án gốc ban đầu.\n- Tự động hiển thị giải thích chi tiết trích từ đáp án gốc sau mỗi câu trả lời.\n- Tích hợp âm thanh Web Audio phản hồi đúng/sai sinh động (không cần mạng).\n- Có chế độ Lật thẻ ghi nhớ (Flashcard), Luyện tập 3 ngày, Ôn câu sai, Tra cứu toàn diện.\n- Tối ưu hoàn hảo cho điện thoại và máy tính, dễ dàng chia sẻ qua Zalo.",
+  "updatedAt": "2026-09-29T01:45:00.491141600Z",
+  "userFacing": true
+}

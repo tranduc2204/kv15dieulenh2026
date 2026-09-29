@@ -1,0 +1,14 @@
+
+The command exited with code 0.
+Output:
+
+
+    Directory: C:\Users\Acer\.gemini\antigravity\brain\04883a7b-f14e-427c-a92d-cdc41dece94d\scratch
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         9/17/2026   9:39 PM                deploy                                                               
+
+
+
